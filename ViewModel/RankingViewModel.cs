@@ -5,7 +5,7 @@ using System.Text;
 
 namespace POiG_Projekt.ViewModel
 {
-    class MainWindowViewModel : ViewModelBase
+    class RankingViewModel : ViewModelBase
     {
     }
 }
