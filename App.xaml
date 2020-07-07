@@ -24,5 +24,24 @@
         <DataTemplate DataType="{x:Type viewModel:SubjectsViewModel}">
             <view:Subjects/>
         </DataTemplate>
+
+        <Style TargetType="Button" x:Key="BlueHomeButton">
+            <Setter Property="Margin" Value="50 15"/>
+            <Setter Property="Background" Value="#409AEE"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="MenuButton">
+            <Setter Property="Background" Value="#323942"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="40 0"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Height" Value="40"/>
+            <!--<Setter Property="HorizontalAlignment" Value="Left"/>-->
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
     </Application.Resources>
 </Application>

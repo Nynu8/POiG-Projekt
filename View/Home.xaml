@@ -26,12 +26,12 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <Button Grid.Column="0" Grid.Row="0" Content="MojeKursy" Margin="50 15"/>
-            <Button Grid.Column="1" Grid.Row="0" Content="Studenci" Margin="50 15"/>
-            <Button Grid.Column="1" Grid.Row="1" Content="Przedmioty" Margin="50 15"/>
-            <Button Grid.Column="0" Grid.Row="1" Content="Wykładowcy" Margin="50 15"/>
-            <Button Grid.Column="0" Grid.Row="2" Content="Ranking" Margin="50 15"/>
-            <Button Grid.Column="1" Grid.Row="2" Content="Wyloguj" Margin="50 15"/>
+            <Button Grid.Column="0" Grid.Row="0" Content="Moje kursy" Style="{StaticResource BlueHomeButton}"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="Studenci" Style="{StaticResource BlueHomeButton}"/>
+            <Button Grid.Column="1" Grid.Row="1" Content="Przedmioty" Style="{StaticResource BlueHomeButton}"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="Wykładowcy" Style="{StaticResource BlueHomeButton}"/>
+            <Button Grid.Column="0" Grid.Row="2" Content="Ranking" Style="{StaticResource BlueHomeButton}"/>
+            <Button Grid.Column="1" Grid.Row="2" Content="Wyloguj" Style="{StaticResource BlueHomeButton}"/>
         </Grid>
     </Grid>
 </Page>
