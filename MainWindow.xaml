@@ -11,8 +11,8 @@
             <ColumnDefinition Width="180"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        
-        <Grid Grid.Column="0">
+
+        <Grid Grid.Column="0" Background="#323942">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="2*"/>
@@ -33,13 +33,13 @@
             <Button x:Name="ButtonWyloguj" Content="Wyloguj" Grid.Row="2" Height="40" Margin="0 0 0 60"/>
         </Grid>
 
-        <Grid Grid.Column="1">
+        <Grid Grid.Column="1" Background="#F5F5F5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
 
-            <Label x:Name="LabelTytul" Content="Home" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30"/>
+            <Label x:Name="LabelTytul" Content="Home (będzie zmieniał się przy zmianach)" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30"/>
 
             <Frame Grid.Row="1" Margin="30" Source="Home.xaml"/>
         </Grid>

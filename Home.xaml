@@ -6,9 +6,32 @@
       xmlns:local="clr-namespace:POiG_Projekt"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Home">
-
+      Title="Home"
+      Background="White">
     <Grid>
-        <Label Content="HOME.XAML here" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" Text="Tu będzie binding jakiś albo nie wiem co, jakiś opis " FontSize="16" Margin="50 15"/>
+
+        <Grid Grid.Row="1" Margin="100 20 100 80">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Content="MojeKursy" Margin="50 15"/>
+            <Button Grid.Column="1" Grid.Row="0" Content="Studenci" Margin="50 15"/>
+            <Button Grid.Column="1" Grid.Row="1" Content="Przedmioty" Margin="50 15"/>
+            <Button Grid.Column="0" Grid.Row="1" Content="Wykładowcy" Margin="50 15"/>
+            <Button Grid.Column="0" Grid.Row="2" Content="Ranking" Margin="50 15"/>
+            <Button Grid.Column="1" Grid.Row="2" Content="Wyloguj" Margin="50 15"/>
+        </Grid>
     </Grid>
 </Page>
