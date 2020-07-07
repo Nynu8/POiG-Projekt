@@ -1,11 +1,16 @@
 ﻿using POiG_Projekt.ViewModel.Base;
+using POiG_Projekt.ViewModel.Navigator;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 
 namespace POiG_Projekt.ViewModel
 {
     class MainWindowViewModel : ViewModelBase
     {
+        public INavigator navigator { get; } = new Navigator.Navigator();
+        public MainWindowViewModel() { navigator.UpdateCurrentVMCommand.Execute(ViewType.Home); }
+        public ICommand NavigateCommand => navigator.UpdateCurrentVMCommand;
     }
 }

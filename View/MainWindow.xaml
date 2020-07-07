@@ -5,11 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POiG_Projekt"
         xmlns:vm="clr-namespace:POiG_Projekt.ViewModel"
+        xmlns:nav="clr-namespace:POiG_Projekt.ViewModel.Navigator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="1024">
+        Title="MainWindow" Height="640" Width="1024"
+        MinHeight="640" MinWidth="1024">
     <Window.Resources>
         <vm:MainWindowViewModel x:Key="viewModel"/>
     </Window.Resources>
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="180"/>
@@ -24,14 +29,14 @@
             </Grid.RowDefinitions>
             
             <Image Grid.Row="0" Height="80" Width="160" Source="../Resources/Logo.png" Stretch="Fill"/>
-            
-            <StackPanel Grid.Row="1" Margin="0 30 0 20">
-                <Button x:Name="ButtonHome" Content="Home" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonMojeKursy" Content="Moje Kursy" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonStudenci" Content="Studenci" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonWykladowycy" Content="Wykładowcy" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonPrzedmioty" Content="Przedmioty" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonRanking" Content="RANKING" Grid.Row="1" Height="40" Margin="0 10 0 0"/>
+
+            <StackPanel Grid.Row="1" Margin="0 30 0 20" DataContext="{StaticResource viewModel}">
+                <Button x:Name="ButtonHome" Content="Home" Grid.Row="1" Height="40" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Home}"/>
+                <Button x:Name="ButtonMojeKursy" Content="Moje Kursy" Grid.Row="1" Height="40" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Courses}"/>
+                <Button x:Name="ButtonStudenci" Content="Studenci" Grid.Row="1" Height="40" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Students}"/>
+                <Button x:Name="ButtonWykladowycy" Content="Wykładowcy" Grid.Row="1" Height="40" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Professors}"/>
+                <Button x:Name="ButtonPrzedmioty" Content="Przedmioty" Grid.Row="1" Height="40" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Subjects}"/>
+                <Button x:Name="ButtonRanking" Content="RANKING" Grid.Row="1" Height="40" Margin="0 10 0 0" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Ranking}"/>
             </StackPanel>
 
             <Button x:Name="ButtonWyloguj" Content="Wyloguj" Grid.Row="2" Height="40" Margin="0 0 0 60"/>
@@ -45,7 +50,7 @@
 
             <Label x:Name="LabelTytul" Content="Home (będzie zmieniał się przy zmianach)" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30"/>
 
-            <Frame Grid.Row="1" Margin="30" NavigationUIVisibility="Hidden" Content="{Binding Navigator.CurrentVM, Source={StaticResource viewModel}}"/>
+            <Frame Grid.Row="1" Margin="30" NavigationUIVisibility="Hidden" Content="{Binding navigator.CurrentVM, Source={StaticResource viewModel}}"/>
         </Grid>
     </Grid>
 </Window>
