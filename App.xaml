@@ -26,7 +26,7 @@
         </DataTemplate>
 
         <Style TargetType="Button" x:Key="BlueHomeButton">
-            <Setter Property="Margin" Value="50 15"/>
+            <Setter Property="Margin" Value="50 25"/>
             <Setter Property="Background" Value="#409AEE"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -56,6 +56,14 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="Title">
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Bottom"/>
+            <Setter Property="Foreground" Value="#409AEE"/>
+            <Setter Property="FontWeight" Value="Bold"/>
         </Style>
     </Application.Resources>
 </Application>

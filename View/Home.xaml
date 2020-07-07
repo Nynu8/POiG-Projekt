@@ -5,18 +5,19 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:POiG_Projekt.View"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="640" d:DesignWidth="844"
       Title="Home"
       Background="White">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        
-        <TextBlock Grid.Row="0" Text="Tu będzie binding jakiś albo nie wiem co, jakiś opis " FontSize="16" Margin="50 15"/>
+        <Label x:Name="LabelTytul" Grid.Row="0" Content="Home" Style="{StaticResource Title}"/>
+        <TextBlock Grid.Row="1" Text="Tu będzie binding jakiś albo nie wiem co, jakiś opis [buttony też do zmiany]" FontSize="16" Margin="20 0" Padding="20" Background="#F5F5F5"/>
 
-        <Grid Grid.Row="1" Margin="100 20 100 80">
+        <Grid Grid.Row="2" Margin="100 20 100 80">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>

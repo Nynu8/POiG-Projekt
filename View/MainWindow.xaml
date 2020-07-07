@@ -34,25 +34,18 @@
 
             <StackPanel Grid.Row="1" Margin="0 30 0 20" DataContext="{StaticResource viewModel}">
                     <Button x:Name="ButtonHome" Content="Home" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Home}" Style="{StaticResource MenuButton}"/>
-                    <Button x:Name="ButtonMojeKursy" Content="Moje Kursy" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Courses}" Style="{StaticResource MenuButton}"/>
+                    <Button x:Name="ButtonMojeKursy" Content="Moje kursy" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Courses}" Style="{StaticResource MenuButton}"/>
                     <Button x:Name="ButtonStudenci" Content="Studenci" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Students}" Style="{StaticResource MenuButton}"/>
                     <Button x:Name="ButtonWykladowycy" Content="Wykładowcy" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Professors}" Style="{StaticResource MenuButton}"/>
                     <Button x:Name="ButtonPrzedmioty" Content="Przedmioty" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Subjects}" Style="{StaticResource MenuButton}"/>
-                    <Button x:Name="ButtonRanking" Content="RANKING" Grid.Row="1" Margin="0 10 0 0" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Ranking}" Style="{StaticResource MenuButton}"/>
+                    <Button x:Name="ButtonRanking" Content="Ranking" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Ranking}" Style="{StaticResource MenuButton}"/>
             </StackPanel>
 
             <Button x:Name="ButtonWyloguj" Content="Wyloguj" Grid.Row="2" Margin="0 0 0 60" Style="{StaticResource MenuButton}"/>
         </Grid>
 
-        <Grid Grid.Column="1" Background="#F5F5F5">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="5*"/>
-            </Grid.RowDefinitions>
-
-            <Label x:Name="LabelTytul" Content="Home (będzie zmieniał się przy zmianach)" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30" FontWeight="Bold" Foreground="#409AEE"/>
-
-            <Frame Grid.Row="1" Margin="30" NavigationUIVisibility="Hidden" Content="{Binding navigator.CurrentVM, Source={StaticResource viewModel}}"/>
+        <Grid Grid.Column="1">
+            <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Content="{Binding navigator.CurrentVM, Source={StaticResource viewModel}}"/>
         </Grid>
     </Grid>
 </Window>
