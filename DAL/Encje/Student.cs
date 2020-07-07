@@ -14,13 +14,13 @@ namespace POiG_Projekt.DAL.Encje
         public bool Stypendium { get; set; }
         public sbyte Punkty { get; set; }
         public string DataRozpoczecia { get; set; }
-        public string Srednia { get; set; }
+        public double Srednia { get; set; }
         public string Email { get; set; }
         public sbyte IdOceny { get; set; }
         public sbyte IdGrupy { get; set; }
         public sbyte IdOsiagniecia { get; set; }
 
-        public Student(string imie, string nazwisko, sbyte nrAlbumu, bool stypendium, sbyte punkty, string dataRozpoczecia, string srednia, string email, sbyte idOceny, sbyte idGrupy, sbyte idOsiagniecia)
+        public Student(string imie, string nazwisko, sbyte nrAlbumu, bool stypendium, sbyte punkty, string dataRozpoczecia, double srednia, string email, sbyte idOceny, sbyte idGrupy, sbyte idOsiagniecia)
         {
             Id_student = null;
             Imie = imie;
@@ -38,18 +38,18 @@ namespace POiG_Projekt.DAL.Encje
 
         public Student(MySqlDataReader reader)
         {
-            //Id_student = sbyte.Parse(reader["id_s"].ToString());
-            //Imie = reader["imie"].ToString();
-            //Nazwisko = reader["nazwisko"].ToString();
-            //NrAlbumu = sbyte.Parse(reader["nrAlbumu"].ToString());
-            //Stypendium =bool.Parse(reader["stypendium"].ToString());
-            //Punkty = sbyte.Parse(reader["punkty"].ToString());
-            //DataRozpoczecia = reader["dataRozpoczecia"].ToString();
-            //Srednia = sbyte.Parse(reader["srednia"].ToString());
-            //Email = reader["email"].ToString();
-            //IdOceny = sbyte.Parse(reader["id_oceny"].ToString());
-            //IdGrupy = sbyte.Parse(reader["id_g"].ToString());
-            //IdOsiagniecia = sbyte.Parse(reader["id_osiagniecia"].ToString());
+            Id_student = sbyte.Parse(reader["id_student"].ToString());
+            Imie = reader["imie"].ToString();
+            Nazwisko = reader["nazwisko"].ToString();
+            NrAlbumu = sbyte.Parse(reader["nrAlbumu"].ToString());
+            Stypendium = bool.Parse(reader["stypendium"].ToString());
+            Punkty = sbyte.Parse(reader["punkty"].ToString());
+            DataRozpoczecia = reader["dataRozpoczecia"].ToString();
+            Srednia = double.Parse(reader["srednia"].ToString());
+            Email = reader["email"].ToString();
+            IdOceny = sbyte.Parse(reader["id_ocena"].ToString());
+            IdGrupy = sbyte.Parse(reader["id_grupa"].ToString());
+            IdOsiagniecia = sbyte.Parse(reader["id_osiagniecia"].ToString());
         }
 
 
@@ -73,7 +73,7 @@ namespace POiG_Projekt.DAL.Encje
             if (Punkty != osoba.Punkty) return false;
             if (Nazwisko.ToLower() != osoba.Nazwisko.ToLower()) return false;
             if (DataRozpoczecia.ToLower() != osoba.DataRozpoczecia.ToLower()) return false;
-            if (Srednia.ToLower() != osoba.Srednia.ToLower()) return false;
+            if (Srednia != osoba.Srednia) return false;
             if (Email.ToLower() != osoba.Email.ToLower()) return false;
             if (IdOceny != osoba.IdOceny) return false;
             if (IdGrupy != osoba.IdGrupy) return false;
