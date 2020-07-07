@@ -40,8 +40,22 @@
             <Setter Property="Padding" Value="40 0"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Height" Value="40"/>
-            <!--<Setter Property="HorizontalAlignment" Value="Left"/>-->
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#323942"/>
+                    <Setter Property="BorderThickness" Value="6 0 0 0"/>
+                    <Setter Property="Padding" Value="34 0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="Button" x:Key="BlueDetailsButton">
+            <Setter Property="Padding" Value="16 8"/>
+            <Setter Property="Background" Value="#409AEE"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="14"/>
         </Style>
     </Application.Resources>
 </Application>

@@ -6,9 +6,42 @@
       xmlns:local="clr-namespace:POiG_Projekt.View"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Students">
+      Title="Students"
+      Background="White">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0">
+        <Label x:Name="LabelSemestr" Content="Semestr:"  Margin="20 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+            <ComboBox x:Name="ComboBoxSemestr" Width="180" Height="30"/>
+            <Label x:Name="LabelGrupa" Content="Grupa:" Margin="60 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+        <ComboBox x:Name="ComboBoxGrupa" Width="180" Height="30" />
+        </StackPanel>
+        <ListBox x:Name="ListBoxStudenci" ItemsSource="{Binding}" Grid.Row="2">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="2*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Bindowane Imię"/>
+                        <TextBlock Grid.Column="1" Text="Bindowane Nazwisko"/>
+                        <TextBlock Grid.Column="2" Text="Bindowany Email"/>
+                        <TextBlock Grid.Column="3" Text="Bindowany NrAlbumu"/>
+                        <TextBlock Grid.Column="4" Text="Bindowana Grupa"/>
+                        <Button Grid.Column="5" Content="Zobacz" Style="{StaticResource BlueDetailsButton}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
+    
 </Page>

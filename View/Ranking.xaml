@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:POiG_Projekt.View"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Ranking">
+      Title="Ranking"
+      Background="White">
 
     <Grid>
         

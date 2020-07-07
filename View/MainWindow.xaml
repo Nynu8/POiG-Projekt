@@ -27,11 +27,11 @@
             
             <StackPanel Grid.Row="1" Margin="0 30 0 20">
                 <Button x:Name="ButtonHome" Content="Home" Grid.Row="1" Style="{StaticResource MenuButton}"/>
-                <Button x:Name="ButtonMojeKursy" Content="Moje Kursy" Grid.Row="1" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonMojeKursy" Content="Moje kursy" Grid.Row="1" Style="{StaticResource MenuButton}"/>
                 <Button x:Name="ButtonStudenci" Content="Studenci" Grid.Row="1" Style="{StaticResource MenuButton}"/>
                 <Button x:Name="ButtonWykladowycy" Content="Wykładowcy" Grid.Row="1" Style="{StaticResource MenuButton}"/>
                 <Button x:Name="ButtonPrzedmioty" Content="Przedmioty" Grid.Row="1" Style="{StaticResource MenuButton}"/>
-                <Button x:Name="ButtonRanking" Content="Ranking" Grid.Row="1" Margin="0 10 0 0" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonRanking" Content="Ranking" Grid.Row="1" Style="{StaticResource MenuButton}"/>
             </StackPanel>
 
             <Button x:Name="ButtonWyloguj" Content="Wyloguj" Grid.Row="2" Margin="0 0 0 60" Style="{StaticResource MenuButton}"/>
@@ -43,7 +43,7 @@
                 <RowDefinition Height="5*"/>
             </Grid.RowDefinitions>
 
-            <Label x:Name="LabelTytul" Content="Home (będzie zmieniał się przy zmianach)" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30"/>
+            <Label x:Name="LabelTytul" Content="Home (będzie zmieniał się przy zmianach)" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30" FontWeight="Bold" Foreground="#409AEE"/>
 
             <Frame Grid.Row="1" Margin="30" NavigationUIVisibility="Hidden" Content="{Binding Navigator.CurrentVM, Source={StaticResource viewModel}}"/>
         </Grid>
