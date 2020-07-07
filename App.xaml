@@ -40,7 +40,8 @@
             <Setter Property="Padding" Value="40 0"/>
             <Setter Property="FontSize" Value="18"/>
             <Setter Property="Height" Value="40"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <!--<Setter Property="HorizontalAlignment" Value="Left"/>-->
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
         </Style>
     </Application.Resources>
 </Application>
