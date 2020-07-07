@@ -8,11 +8,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DAL\Repozytoria\" />
     <Folder Include="Model\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.20" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Logo.png">
+      <CustomToolNamespace>POiG-Projekt</CustomToolNamespace>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>

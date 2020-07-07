@@ -1,15 +1,27 @@
-﻿using System;
+﻿using POiG_Projekt.ViewModel.Base;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Windows.Input;
 
-namespace POiG_Projekt.ViewModel.Base
+namespace POiG_Projekt.ViewModel.Navigator
 {
-    internal class ViewModelBase : INotifyPropertyChanged
+    class Navigator : INavigator, INotifyPropertyChanged
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        private ViewModelBase currentVM;
+        public ViewModelBase CurrentVM
+        {
+            get => this.currentVM;
+            set
+            {
+                this.currentVM = value;
+                this.OnPropertyChanged();
+            }
+        }
 
+        public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string name = null)
         {
             this.onPropertyChanged(new[] { name });
@@ -24,5 +36,7 @@ namespace POiG_Projekt.ViewModel.Base
                 }
             }
         }
+
+        public ICommand UpdateCurrentVMCommand => new UpdateCurrentVMCommand(this);
     }
 }

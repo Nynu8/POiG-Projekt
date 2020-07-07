@@ -2,8 +2,46 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:POiG_Projekt"
-             StartupUri="MainWindow.xaml">
+             xmlns:view="clr-namespace:POiG_Projekt.View"
+             xmlns:viewModel="clr-namespace:POiG_Projekt.ViewModel"
+             StartupUri="View/MainWindow.xaml">
     <Application.Resources>
-         
+        <DataTemplate DataType="{x:Type viewModel:CoursesViewModel}">
+            <view:Courses/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+            <view:Home/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:ProfessorsViewModel}">
+            <view:Professors/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:RankingViewModel}">
+            <view:Ranking/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:StudentsViewModel}">
+            <view:Students/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:SubjectsViewModel}">
+            <view:Subjects/>
+        </DataTemplate>
+
+        <Style TargetType="Button" x:Key="BlueHomeButton">
+            <Setter Property="Margin" Value="50 15"/>
+            <Setter Property="Background" Value="#409AEE"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontSize" Value="20"/>
+        </Style>
+
+        <Style TargetType="Button" x:Key="MenuButton">
+            <Setter Property="Background" Value="#323942"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="40 0"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Height" Value="40"/>
+            <!--<Setter Property="HorizontalAlignment" Value="Left"/>-->
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+        </Style>
     </Application.Resources>
 </Application>
