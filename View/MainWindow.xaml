@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POiG_Projekt"
+        xmlns:vm="clr-namespace:POiG_Projekt.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="1024">
+    <Window.Resources>
+        <vm:MainWindowViewModel x:Key="viewModel"/>
+    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="180"/>
@@ -41,7 +45,7 @@
 
             <Label x:Name="LabelTytul" Content="Home" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="30"/>
 
-            <Frame Grid.Row="1" Margin="30" Source="Home.xaml"/>
+            <Frame Grid.Row="1" Margin="30" NavigationUIVisibility="Hidden" Content="{Binding Navigator.CurrentVM, Source={StaticResource viewModel}}"/>
         </Grid>
     </Grid>
 </Window>

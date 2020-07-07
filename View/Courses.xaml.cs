@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace POiG_Projekt.View
 {
     /// <summary>
-    /// Logika interakcji dla klasy Home.xaml
+    /// Interaction logic for Courses.xaml
     /// </summary>
-    public partial class Home : Page
+    public partial class Courses : Page
     {
-        public Home()
+        public Courses()
         {
             InitializeComponent();
         }
