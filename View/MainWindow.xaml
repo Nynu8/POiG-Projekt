@@ -26,15 +26,15 @@
             <Image Grid.Row="0" Height="80" Width="160" Source="../Resources/Logo.png" Stretch="Fill"/>
             
             <StackPanel Grid.Row="1" Margin="0 30 0 20">
-                <Button x:Name="ButtonHome" Content="Home" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonMojeKursy" Content="Moje Kursy" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonStudenci" Content="Studenci" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonWykladowycy" Content="Wykładowcy" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonPrzedmioty" Content="Przedmioty" Grid.Row="1" Height="40"/>
-                <Button x:Name="ButtonRanking" Content="RANKING" Grid.Row="1" Height="40" Margin="0 10 0 0"/>
+                <Button x:Name="ButtonHome" Content="Home" Grid.Row="1" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonMojeKursy" Content="Moje Kursy" Grid.Row="1" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonStudenci" Content="Studenci" Grid.Row="1" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonWykladowycy" Content="Wykładowcy" Grid.Row="1" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonPrzedmioty" Content="Przedmioty" Grid.Row="1" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonRanking" Content="Ranking" Grid.Row="1" Margin="0 10 0 0" Style="{StaticResource MenuButton}"/>
             </StackPanel>
 
-            <Button x:Name="ButtonWyloguj" Content="Wyloguj" Grid.Row="2" Height="40" Margin="0 0 0 60"/>
+            <Button x:Name="ButtonWyloguj" Content="Wyloguj" Grid.Row="2" Margin="0 0 0 60" Style="{StaticResource MenuButton}"/>
         </Grid>
 
         <Grid Grid.Column="1" Background="#F5F5F5">
