@@ -13,7 +13,6 @@ namespace POiG_Projekt.DAL
         {
             String connetionString = $"host={dbData.HOST};port={dbData.PORT};user id={dbData.USER};password={dbData.PASSWORD};database={dbData.DB};";
             Cnn = new MySqlConnection(@connetionString);
-            Cnn.Open();
         }
         public static DBConnection Connection
         {
