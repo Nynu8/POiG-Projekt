@@ -4,11 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:POiG_Projekt.View"
+      xmlns:vm="clr-namespace:POiG_Projekt.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="844"
       Title="Courses"
       Background="White">
-
+    <Page.Resources>
+        <vm:CoursesViewModel x:Key="coursesViewModel"/>
+    </Page.Resources>
+    <Page.DataContext>
+        <vm:CoursesViewModel/>
+    </Page.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -16,23 +22,33 @@
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Moje kursy" Style="{StaticResource Title}"/>
 
-        <ListBox x:Name="ListBoxKursy" ItemsSource="{Binding}" Grid.Row="1">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="3">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Bindowany Przedmiot" />
-                        <TextBlock Grid.Column="1" Text="Bindowana Grupa"/>
-                        <TextBlock Grid.Column="2" Text="Bindowany Semestr"/>
-                        <Button Grid.Column="3" Content="Zobacz" Style="{StaticResource BlueDetailsButton}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListView x:Name="ListBoxKursy" ItemsSource="{Binding Kursy}" Grid.Row="1">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="300" Header="Przedmiot" DisplayMemberBinding="{Binding Przedmiot}"/>
+                    <GridViewColumn Width="195" Header="Grupa">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Grupa}" Margin="85 0 0 0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="195" Header="Semestr">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Semestr}" Margin="90 0 0 0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="150" Header="Szczegóły">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}" Margin="30 0 0 0"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>
