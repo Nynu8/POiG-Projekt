@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:POiG_Projekt"
              xmlns:view="clr-namespace:POiG_Projekt.View"
              xmlns:viewModel="clr-namespace:POiG_Projekt.ViewModel"
-             StartupUri="View/MainWindow.xaml">
+             StartupUri="View/SignInWindow.xaml">
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewModel:CoursesViewModel}">
             <view:Courses/>
