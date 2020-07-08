@@ -65,5 +65,9 @@
             <Setter Property="Foreground" Value="#409AEE"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
+        
+        <Style x:Key="DottedFont">
+            <Setter Property="TextElement.FontFamily" Value="/Resources/#dotsfont"/>
+        </Style>
     </Application.Resources>
 </Application>

@@ -18,11 +18,11 @@
         <Label x:Name="Error" Height="25" Foreground="Red" Content="{Binding Error}"/>
         <StackPanel Orientation="Horizontal">
             <TextBox x:Name="Login" Margin="10" MaxLength="20" MinWidth="120" Text="{Binding NazwaUzytkownika}" />
-            <TextBox x:Name="Password" Margin="10" MaxLength="20" MinWidth="120" Text="{Binding Haslo}"/>
+            <TextBox x:Name="Password" Margin="10" MaxLength="20" MinWidth="120"  AllowDrop="False" Text="{Binding Haslo}"/>
         </StackPanel>
         <Button Content="Logowanie" Margin="10" Command="{Binding Login, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SignInWindow}}}"/>
         <!-- vv Tymczasowy przycisk vv -->
-        <Button Content="LOL XD" Margin="10" Command="{Binding ShowMenu, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SignInWindow}}}"/>
+        <Button Content="bez logowania" Margin="10" Command="{Binding ShowMenu, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SignInWindow}}}"/>
         <!-- ^^ Tymczasowy przycisk ^^ -->
     </StackPanel>
 </Window>
