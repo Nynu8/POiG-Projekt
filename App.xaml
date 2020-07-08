@@ -25,14 +25,6 @@
             <view:Subjects/>
         </DataTemplate>
 
-        <Style TargetType="Button" x:Key="BlueHomeButton">
-            <Setter Property="Margin" Value="50 25"/>
-            <Setter Property="Background" Value="#409AEE"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="FontSize" Value="20"/>
-        </Style>
-
         <Style TargetType="Button" x:Key="MenuButton">
             <Setter Property="Background" Value="#323942"/>
             <Setter Property="Foreground" Value="White"/>
@@ -50,8 +42,26 @@
             </Style.Triggers>
         </Style>
 
+        <Style TargetType="Button" x:Key="MenuButtonWyloguj">
+            <Setter Property="Background" Value="#323942"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="40 0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#323942"/>
+                    <Setter Property="BorderThickness" Value="6 0 0 0"/>
+                    <Setter Property="Padding" Value="34 0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
         <Style TargetType="Button" x:Key="BlueDetailsButton">
             <Setter Property="Padding" Value="16 8"/>
+            <Setter Property="Margin" Value="0 8 0 0"/>
             <Setter Property="Background" Value="#409AEE"/>
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="BorderThickness" Value="0"/>
@@ -65,9 +75,32 @@
             <Setter Property="Foreground" Value="#409AEE"/>
             <Setter Property="FontWeight" Value="Bold"/>
         </Style>
-        
+      
         <Style x:Key="DottedFont">
             <Setter Property="TextElement.FontFamily" Value="/Resources/#dotsfont"/>
+        </Style>
+
+        <Style TargetType="GridViewColumnHeader" x:Key="ColumnHeader">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="BorderBrush" Value="White"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left" />
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Background" Value="White"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="TextBlock" x:Key="ListViewElement">
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style TargetType="ListView" x:Key="ListViewStyle">
+            <Setter Property="BorderThickness" Value="0"/>
         </Style>
     </Application.Resources>
 </Application>
