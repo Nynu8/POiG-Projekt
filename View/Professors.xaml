@@ -15,26 +15,47 @@
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Wykładowcy" Style="{StaticResource Title}"/>
+        <ListView x:Name="ListBoxWykladowcy" ItemsSource="{Binding Prowadzacy}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Width="120" Header="Imię" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Imie}" Style="{StaticResource ListViewElement}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="120" Header="Nazwisko" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Nazwisko}" Style="{StaticResource ListViewElement}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="60" Header="Tytuł" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Tytul}" Style="{StaticResource ListViewElement}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="220" Header="Adres e-mail" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Email}" Style="{StaticResource ListViewElement}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="324" Header="Przedmioty" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="Bindowane Przedmioty" Style="{StaticResource ListViewElement}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
 
-        <ListBox x:Name="ListBoxWykladowcy" ItemsSource="{Binding Prowadzacy}" Grid.Row="1">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="3">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="{Binding Imie}"/>
-                        <TextBlock Grid.Column="1" Text="{Binding Nazwisko}"/>
-                        <TextBlock Grid.Column="2" Text="{Binding Tytul}"/>
-                        <TextBlock Grid.Column="3" Text="{Binding Email}"/>
-                        <TextBlock Grid.Column="4" Text="Bindowana Przedmioty"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Page>
