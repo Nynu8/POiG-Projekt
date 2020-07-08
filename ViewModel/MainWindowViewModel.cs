@@ -17,5 +17,31 @@ namespace POiG_Projekt.ViewModel
             _ = DBConnection.Connection;
         }
         public ICommand NavigateCommand => navigator.UpdateCurrentVMCommand;
+
+        private ICommand signOut = null;
+        public ICommand SignOut
+        {
+            get
+            {
+                if (signOut == null)
+                {
+                    signOut = new RelayCommand(
+                        arg =>
+                        {
+                            MainWindow currentWindow = arg as MainWindow;
+                            View.SignInWindow signInWindow = new View.SignInWindow();
+                            currentWindow.Close();
+                            signInWindow.Show();
+                        },
+                        arg =>
+                        {
+                            return true;
+                        }
+                        );
+                }
+                return signOut;
+            }
+        }
+
     }
 }
