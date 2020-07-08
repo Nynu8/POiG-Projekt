@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="DAL\Repozytoria\" />
-    <Folder Include="Model\" />
   </ItemGroup>
 
   <ItemGroup>

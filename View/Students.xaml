@@ -23,7 +23,7 @@
             <Label x:Name="LabelGrupa" Content="Grupa:" Margin="60 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
         <ComboBox x:Name="ComboBoxGrupa" Width="180" Height="30" />
         </StackPanel>
-        <ListBox x:Name="ListBoxStudenci" ItemsSource="{Binding}" Grid.Row="2">
+        <ListBox x:Name="ListBoxStudenci" ItemsSource="{Binding Studenci}" Grid.Row="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="3">
@@ -35,11 +35,11 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Bindowane Imię"/>
-                        <TextBlock Grid.Column="1" Text="Bindowane Nazwisko"/>
-                        <TextBlock Grid.Column="2" Text="Bindowany Email"/>
-                        <TextBlock Grid.Column="3" Text="Bindowany NrAlbumu"/>
-                        <TextBlock Grid.Column="4" Text="Bindowana Grupa"/>
+                        <TextBlock Grid.Column="0" Text="{Binding Imie}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding Nazwisko}"/>
+                        <TextBlock Grid.Column="2" Text="{Binding Email}"/>
+                        <TextBlock Grid.Column="3" Text="{Binding NrAlbumu}"/>
+                        <TextBlock Grid.Column="4" Text="{Binding IdGrupy}"/>
                         <Button Grid.Column="5" Content="Zobacz" Style="{StaticResource BlueDetailsButton}"/>
                     </Grid>
                 </DataTemplate>

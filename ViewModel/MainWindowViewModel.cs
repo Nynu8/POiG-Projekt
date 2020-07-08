@@ -1,4 +1,5 @@
-﻿using POiG_Projekt.ViewModel.Base;
+﻿using POiG_Projekt.DAL;
+using POiG_Projekt.ViewModel.Base;
 using POiG_Projekt.ViewModel.Navigator;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,11 @@ namespace POiG_Projekt.ViewModel
     class MainWindowViewModel : ViewModelBase
     {
         public INavigator navigator { get; } = new Navigator.Navigator();
-        public MainWindowViewModel() { navigator.UpdateCurrentVMCommand.Execute(ViewType.Home); }
+        public MainWindowViewModel()
+        { 
+            navigator.UpdateCurrentVMCommand.Execute(ViewType.Home);
+            _ = DBConnection.Connection;
+        }
         public ICommand NavigateCommand => navigator.UpdateCurrentVMCommand;
     }
 }

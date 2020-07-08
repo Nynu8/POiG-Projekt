@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Wykładowcy" Style="{StaticResource Title}"/>
 
-        <ListBox x:Name="ListBoxWykladowcy" ItemsSource="{Binding}" Grid.Row="1">
+        <ListBox x:Name="ListBoxWykladowcy" ItemsSource="{Binding Prowadzacy}" Grid.Row="1">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid Margin="3">
@@ -27,10 +27,10 @@
                             <ColumnDefinition Width="2*"/>
                             <ColumnDefinition Width="2*"/>
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Bindowane Imię"/>
-                        <TextBlock Grid.Column="1" Text="Bindowane Nazwisko"/>
-                        <TextBlock Grid.Column="2" Text="Bindowany Tytuł naukowy"/>
-                        <TextBlock Grid.Column="3" Text="Bindowany Email"/>
+                        <TextBlock Grid.Column="0" Text="{Binding Imie}"/>
+                        <TextBlock Grid.Column="1" Text="{Binding Nazwisko}"/>
+                        <TextBlock Grid.Column="2" Text="{Binding Tytul}"/>
+                        <TextBlock Grid.Column="3" Text="{Binding Email}"/>
                         <TextBlock Grid.Column="4" Text="Bindowana Przedmioty"/>
                     </Grid>
                 </DataTemplate>
