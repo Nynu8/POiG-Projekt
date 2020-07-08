@@ -25,18 +25,18 @@
         <ListView x:Name="ListBoxKursy" ItemsSource="{Binding Kursy}" Grid.Row="1">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="300" Header="Przedmiot" DisplayMemberBinding="{Binding Przedmiot}"/>
-                    <GridViewColumn Width="195" Header="Grupa">
+                    <GridViewColumn Width="311" Header="Przedmiot" DisplayMemberBinding="{Binding Przedmiot}"/>
+                    <GridViewColumn Width="180" Header="Grupa">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Grupa}" Margin="85 0 0 0"/>
+                                <TextBlock Text="{Binding Grupa}" Margin="80 0 0 0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="195" Header="Semestr">
+                    <GridViewColumn Width="180" Header="Semestr">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Semestr}" Margin="90 0 0 0"/>
+                                <TextBlock Text="{Binding Semestr}" Margin="80 0 0 0"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
