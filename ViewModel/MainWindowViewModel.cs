@@ -12,14 +12,14 @@ namespace POiG_Projekt.ViewModel
     class MainWindowViewModel : ViewModelBase
     {
         public INavigator navigator { get; } = new Navigator.Navigator();
-        //private ListaProwadzacych Prowadzacy = new ListaProwadzacych();
+        private ListaProwadzacych Prowadzacy = null;
         public MainWindowViewModel()
         { 
             navigator.UpdateCurrentVMCommand.Execute(ViewType.Home);
             _ = DBConnection.Connection;
             date = DateTime.Now;
-            //żeby użytkownik się poprawnie wyświetlał wystarczy odkomentować to poniżej i powyżej ale nie działa wtedy "bez logowania"
-            //currentUser = Prowadzacy.PobierzBiezacegoUzytkownika(DBConnection.ID);
+            Prowadzacy = new ListaProwadzacych();
+            currentUser = Prowadzacy.PobierzBiezacegoUzytkownika(DBConnection.ID);
         }
 
         #region properties
