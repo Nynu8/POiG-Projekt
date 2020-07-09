@@ -17,42 +17,42 @@
         <ListView x:Name="ListBoxPrzedmioty" ItemsSource="{Binding Przedmioty}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Width="260" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="310" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Nazwa}" Style="{StaticResource ListViewElement}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="70" Header="Skrót" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="60" Header="Skrót" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Skrot}" Style="{StaticResource ListViewElement}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="150" Header="Forma zaliczenia" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="140" Header="Forma zaliczenia" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Rodzaj}" Style="{StaticResource ListViewElement}"/>
+                                <TextBlock Text="{Binding FormaZaliczenia}" Style="{StaticResource ListViewElement}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="70" Header="ECTS" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="60" Header="ECTS" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding ECTS}" Style="{StaticResource ListViewElement}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="130" Header="Ilość efektów" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="120" Header="Liczba efektów" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="Bindowane Efekty" Style="{StaticResource ListViewElement}"/>
+                                <TextBlock Text="{Binding LiczbaEfektow}" Style="{StaticResource ListViewElement}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="140" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="130" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}" Margin="0 10 0 0"/>

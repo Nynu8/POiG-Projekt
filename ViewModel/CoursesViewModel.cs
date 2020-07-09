@@ -36,16 +36,13 @@ namespace POiG_Projekt.ViewModel
                 OnPropertyChanged(nameof(Kursy));
             }
         }
-        public CoursesViewModel() 
+        public CoursesViewModel()
         {
             Kurs k1 = new Kurs("Sieci", "1C", "4");
             Kursy.Add(k1);
             Kursy.Add(new Kurs("Bazy", "2F", "6"));
             Kursy.Add(new Kurs("POiG", "3H", "4"));
         }
-
-
-
 
     }
 }

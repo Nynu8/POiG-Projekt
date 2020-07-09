@@ -1,6 +1,7 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using POiG_Projekt.DAL.Encje;
 using POiG_Projekt.Model;
+using POiG_Projekt.Model.Forms;
 using POiG_Projekt.ViewModel.Base;
 using System;
 using System.Collections.Generic;
@@ -12,13 +13,13 @@ namespace POiG_Projekt.ViewModel
     class SubjectsViewModel : ViewModelBase
     {
         private ListaPrzedmiotow model = null;
-        private List<Przedmiot> przedmioty = null;
+        private List<WidokPrzedmiotu> przedmioty = null;
         public SubjectsViewModel()
         {
             this.model = new ListaPrzedmiotow();
             this.przedmioty = this.model.Przedmioty;
         }
-        public List<Przedmiot> Przedmioty
+        public List<WidokPrzedmiotu> Przedmioty
         {
             get
             {
