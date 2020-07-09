@@ -12,6 +12,7 @@ namespace POiG_Projekt.DAL.Encje
         public string Opis { get; set; }
         public string Data { get; set; }
         public string Rodzaj { get; set; }
+        public sbyte Punkty { get; set; }
         public override bool Equals(object obj)
         {
             var osiagniecia = obj as Osiagniecia;
