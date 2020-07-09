@@ -46,7 +46,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="324" Header="Przedmioty" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="300" Header="Przedmioty" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="Bindowane Przedmioty" Style="{StaticResource ListViewElement}"/>

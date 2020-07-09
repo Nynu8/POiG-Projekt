@@ -18,6 +18,7 @@ namespace POiG_Projekt.ViewModel
             navigator.UpdateCurrentVMCommand.Execute(ViewType.Home);
             _ = DBConnection.Connection;
             date = DateTime.Now;
+            //żeby użytkownik się poprawnie wyświetlał wystarczy odkomentować to poniżej i powyżej ale nie działa wtedy "bez logowania"
             //currentUser = Prowadzacy.PobierzBiezacegoUzytkownika(DBConnection.ID);
         }
 

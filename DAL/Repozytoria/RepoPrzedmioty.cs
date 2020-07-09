@@ -10,7 +10,7 @@ namespace POiG_Projekt.DAL.Repozytoria
     {
         private const string wszystkie_przedmioty = "SELECT * FROM przedmiot";
 
-        public static List<Przedmiot> PobierzWszystkichProwadzacych()
+        public static List<Przedmiot> PobierzWszystkiePrzedmioty()
         {
             List<Przedmiot> przedmioty = new List<Przedmiot>();
             using (var connection = DBConnection.Cnn)

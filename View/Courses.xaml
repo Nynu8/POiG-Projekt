@@ -26,7 +26,7 @@
             <ListView.View>
                 <GridView>
                     <!--<GridViewColumn Width="311" Header="Przedmiot" DisplayMemberBinding="{Binding Przedmiot}" HeaderContainerStyle="{StaticResource ColumnHeader}"/>-->
-                    <GridViewColumn Width="360" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="310" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Przedmiot}" Style="{StaticResource ListViewElement}"/>

@@ -17,7 +17,7 @@ namespace POiG_Projekt.DAL.Encje
             Id_przedmiot = sbyte.Parse(reader["id_przedmiot"].ToString());
             Nazwa = reader["nazwa"].ToString();
             Skrot = reader["skrot"].ToString();
-            Rodzaj = reader["rodzaj"].ToString();
+            Rodzaj = reader["zaliczenie"].ToString();
             ECTS = sbyte.Parse(reader["ECTS"].ToString());
         }
         public override bool Equals(object obj)
