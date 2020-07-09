@@ -57,6 +57,8 @@ namespace POiG_Projekt.ViewModel
                     showMenu = new RelayCommand(
                         arg =>
                         {
+
+                            DBConnection.ID = 1;
                             SignInWindow currentWindow = arg as SignInWindow;
                             MainWindow mainWindow = new MainWindow();
                             currentWindow.Close();
