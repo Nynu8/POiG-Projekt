@@ -15,7 +15,25 @@ namespace POiG_Projekt.ViewModel
         { 
             navigator.UpdateCurrentVMCommand.Execute(ViewType.Home);
             _ = DBConnection.Connection;
+            date = DateTime.Now;
         }
+
+        #region properties
+        //to do: update daty albo liczyć że nikt z tego nie będzie korzystał koło północy XD
+        DateTime date;
+        public DateTime Date
+        {
+            get
+            {
+                return date;
+            }
+            set
+            {
+                date = value;
+                onPropertyChanged();
+            }
+        }
+        #endregion
         public ICommand NavigateCommand => navigator.UpdateCurrentVMCommand;
 
         private ICommand signOut = null;
