@@ -24,30 +24,29 @@
 
         <ListView x:Name="ListBoxKursy" ItemsSource="{Binding Kursy}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
             <ListView.View>
-                <GridView>
-                    <!--<GridViewColumn Width="311" Header="Przedmiot" DisplayMemberBinding="{Binding Przedmiot}" HeaderContainerStyle="{StaticResource ColumnHeader}"/>-->
-                    <GridViewColumn Width="310" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Width="360" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Przedmiot}" Style="{StaticResource ListViewElement}"/>
+                                <TextBlock Text="{Binding Przedmiot}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="180" Header="Grupa" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Grupa}" Style="{StaticResource ListViewElement}"/>
+                                <TextBlock Text="{Binding Grupa}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                     <GridViewColumn Width="180" Header="Semestr" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Semestr}" Style="{StaticResource ListViewElement}"/>
+                                <TextBlock Text="{Binding Semestr}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="150" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="124" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}" Margin="0 10 0 0"/>

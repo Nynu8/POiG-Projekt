@@ -14,15 +14,52 @@
     <Window.DataContext>
         <vm:SignInViewModel/>
     </Window.DataContext>
-    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="#323942">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Height="80" Width="160" Source="../Resources/Logo.png" Stretch="Fill"/>
+
+        </Grid>
+        <Grid Grid.Column="1">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label x:Name="Error" Height="25" Foreground="Red" Content="{Binding Error}"/>
+                <Label x:Name="LoginLabel" Margin="10 0 0 0" Content="Login"/>
+                <TextBox x:Name="Login" Margin="10 0 10 0" MaxLength="20" MinWidth="220" Height="22" VerticalContentAlignment="Center" Text="{Binding NazwaUzytkownika}" />
+                <Label x:Name="HasloLabel" Margin="10 10 10 0"  Content="Haslo"/>
+                <TextBox x:Name="Password" Margin="10 0 10 0" MaxLength="20" MinWidth="220" Height="22" VerticalContentAlignment="Center" AllowDrop="False" Text="{Binding Haslo}"/>
+
+                <Button Content="Logowanie" Margin="10" Command="{Binding Login, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SignInWindow}}}" Style="{StaticResource SignInButton}"/>
+                <!-- vv Tymczasowy przycisk vv -->
+                <Button Content="bez logowania" Margin="10" Command="{Binding ShowMenu, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SignInWindow}}}" Style="{StaticResource SignInButton}"/>
+                <!-- ^^ Tymczasowy przycisk ^^ -->
+
+            </StackPanel>
+        </Grid>
+    </Grid>
+
+    <!--<StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" >
+        --><!--muszę naprawić :(--><!--
+        <Image Height="100" Width="200" Source="../Resources/Logo2.png"/>
+
         <Label x:Name="Error" Height="25" Foreground="Red" Content="{Binding Error}"/>
         <StackPanel Orientation="Horizontal">
             <TextBox x:Name="Login" Margin="10" MaxLength="20" MinWidth="120" Text="{Binding NazwaUzytkownika}" />
-            <TextBox x:Name="Password" Margin="10" MaxLength="20" MinWidth="120"  AllowDrop="False" Text="{Binding Haslo}"/>
+            <TextBox x:Name="Password" Margin="10" MaxLength="20" MinWidth="120" AllowDrop="False" Text="{Binding Haslo}"/>
         </StackPanel>
-        <Button Content="Logowanie" Margin="10" Command="{Binding Login, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SignInWindow}}}"/>
-        <!-- vv Tymczasowy przycisk vv -->
-        <Button Content="bez logowania" Margin="10" Command="{Binding ShowMenu, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SignInWindow}}}"/>
-        <!-- ^^ Tymczasowy przycisk ^^ -->
-    </StackPanel>
+        <Button Content="Logowanie" Margin="10" Command="{Binding Login, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SignInWindow}}}" Style="{StaticResource SignInButton}"/>
+        --><!-- vv Tymczasowy przycisk vv --><!--
+        <Button Content="bez logowania" Margin="10" Command="{Binding ShowMenu, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:SignInWindow}}}" Style="{StaticResource SignInButton}"/>
+        --><!-- ^^ Tymczasowy przycisk ^^ --><!--
+
+    </StackPanel>-->
 </Window>
