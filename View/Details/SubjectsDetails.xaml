@@ -16,7 +16,7 @@
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Binding Name" Style="{StaticResource Title}"/>
-        <Grid Grid.Row="1" Background="#f5f5f5">
+        <Grid Grid.Row="1" Background="#f5f5f5" Height="40">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -25,12 +25,12 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="Skrót:"/>
-            <Label Grid.Column="1" Content="Binding Skrot"/>
-            <Label Grid.Column="2" Content="Forma Zaliczenia:"/>
-            <Label Grid.Column="3" Content="Binding FormaZaliczenia"/>
-            <Label Grid.Column="4" Content="Liczba ECTS:"/>
-            <Label Grid.Column="5" Content="Binding ECTS"/>
+            <Label Grid.Column="0" Content="Skrót:" Style="{StaticResource DetailsNameLabel}"/>
+            <Label Grid.Column="1" Content="Binding Skrot" Style="{StaticResource DetailsBindingLabel}"/>
+            <Label Grid.Column="2" Content="Forma zaliczenia:" Style="{StaticResource DetailsNameLabel}"/>
+            <Label Grid.Column="3" Content="Binding FormaZaliczenia" Style="{StaticResource DetailsBindingLabel}"/>
+            <Label Grid.Column="4" Content="Liczba ECTS:" Style="{StaticResource DetailsNameLabel}"/>
+            <Label Grid.Column="5" Content="Binding ECTS" Style="{StaticResource DetailsBindingLabel}"/>
         </Grid>
         <ListView x:Name="ListViewEfekty" ItemsSource="{Binding Efekty}" Grid.Row="2" Style="{StaticResource ListViewStyle}">
             <ListView.View>

@@ -18,10 +18,10 @@
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Studenci" Style="{StaticResource Title}"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1">
-        <Label x:Name="LabelSemestr" Content="Semestr:"  Margin="20 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-            <ComboBox x:Name="ComboBoxSemestr" Width="180" Height="30"/>
+            <Label x:Name="LabelSemestr" Content="Semestr:"  Margin="20 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+            <ComboBox x:Name="ComboBoxSemestr" Style="{StaticResource ComboBox}" />
             <Label x:Name="LabelGrupa" Content="Grupa:" Margin="60 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-        <ComboBox x:Name="ComboBoxGrupa" Width="180" Height="30" />
+            <ComboBox x:Name="ComboBoxGrupa" Style="{StaticResource ComboBox}"/>
         </StackPanel>
         <ListBox x:Name="ListBoxStudenci" ItemsSource="{Binding Studenci}" Grid.Row="2">
             <ListBox.ItemTemplate>
