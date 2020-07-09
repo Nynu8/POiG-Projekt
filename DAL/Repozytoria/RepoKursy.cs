@@ -9,6 +9,7 @@ namespace POiG_Projekt.DAL.Repozytoria
     class RepoKursy
     {
         private const string wszystkie_kursy = "SELECT * FROM kurs";
+        private const string moje_kursy = "SELECT * FROM kurs WHERE id_prowadzacy = ";
 
         public static List<Kurs> PobierzWszystkieKursy()
         {
@@ -22,6 +23,23 @@ namespace POiG_Projekt.DAL.Repozytoria
                     kursy.Add(new Kurs(reader));
                 connection.Close();
             }
+
+            return kursy;
+        }
+
+        public static List<Kurs> PobierzWszystkieMojeKursy()
+        {
+            List<Kurs> kursy = new List<Kurs>();
+            using (var connection = DBConnection.Cnn)
+            {
+                MySqlCommand command = new MySqlCommand(moje_kursy + DBConnection.ID, connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    kursy.Add(new Kurs(reader));
+                connection.Close();
+            }
+
             return kursy;
         }
     }
