@@ -3,12 +3,19 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:vm="clr-namespace:POiG_Projekt.ViewModel"
       xmlns:local="clr-namespace:POiG_Projekt.View"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="844"
       Title="Students"
       Background="White">
 
+    <Page.Resources>
+        <vm:StudentsViewModel x:Key="viewModel"/>
+    </Page.Resources>
+    <Page.DataContext>
+        <vm:StudentsViewModel/>
+    </Page.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -19,9 +26,9 @@
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1">
         <Label x:Name="LabelSemestr" Content="Semestr:"  Margin="20 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-            <ComboBox x:Name="ComboBoxSemestr" Width="180" Height="30"/>
+            <ComboBox x:Name="ComboBoxSemestr" Width="180" Height="30" ItemsSource="{Binding Semestry}"/>
             <Label x:Name="LabelGrupa" Content="Grupa:" Margin="60 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
-        <ComboBox x:Name="ComboBoxGrupa" Width="180" Height="30" />
+        <ComboBox x:Name="ComboBoxGrupa" Width="180" Height="30" ItemsSource="{Binding Grupy}" SelectedItem="{Binding SelectedGrupa}" />
         </StackPanel>
         <ListBox x:Name="ListBoxStudenci" ItemsSource="{Binding Studenci}" Grid.Row="2">
             <ListBox.ItemTemplate>
