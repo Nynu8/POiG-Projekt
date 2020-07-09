@@ -9,6 +9,7 @@ namespace POiG_Projekt.DAL
     {
         public static MySqlConnection Cnn { get; set; }
         private static DBConnection connection;
+        public static uint ID { get; set; }
         private DBConnection()
         {
             String connetionString = $"host={dbData.HOST};port={dbData.PORT};user id={dbData.USER};password={dbData.PASSWORD};database={dbData.DB};";

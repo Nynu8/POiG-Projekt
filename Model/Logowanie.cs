@@ -34,7 +34,7 @@ namespace POiG_Projekt.Model
         public static uint GetID(string username, string password)
         {
             var hashedPassword = GenerateSaltedHash(password, username);
-            string loginQuery = $"SELECT id_uzytkownik FROM uzytkownik WHERE login = '{username}' AND haslo = '{hashedPassword}';";
+            string loginQuery = $"SELECT id_prowadzacy FROM uzytkownik WHERE login = '{username}' AND haslo = '{hashedPassword}';";
             uint id = 0;
             var tmp = DBConnection.Connection;
             using (var connection = DBConnection.Cnn)
@@ -43,7 +43,7 @@ namespace POiG_Projekt.Model
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
-                    id = uint.Parse(reader["id_uzytkownik"].ToString());
+                    id = uint.Parse(reader["id_prowadzacy"].ToString());
                 connection.Close();
             }
             return id;

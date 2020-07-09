@@ -1,4 +1,5 @@
-﻿using POiG_Projekt.Model;
+﻿using POiG_Projekt.DAL;
+using POiG_Projekt.Model;
 using POiG_Projekt.View;
 using POiG_Projekt.ViewModel.Base;
 using POiG_Projekt.ViewModel.Navigator;
@@ -83,7 +84,8 @@ namespace POiG_Projekt.ViewModel
                         {
                             try
                             {
-                                if (Logowanie.GetID(nazwaUzytkownika, haslo) != 0)
+                                DBConnection.ID = Logowanie.GetID(nazwaUzytkownika, haslo);
+                                if (DBConnection.ID != 0)
                                 {
                                     SignInWindow currentWindow = arg as SignInWindow;
                                     MainWindow mainWindow = new MainWindow();
