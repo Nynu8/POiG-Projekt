@@ -49,7 +49,7 @@
                     <GridViewColumn Width="300" Header="Przedmioty" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="Bindowane Przedmioty" Style="{StaticResource ListViewElement}"/>
+                                <TextBlock Text="{Binding Przedmioty}" Style="{StaticResource ListViewElement}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

@@ -9,7 +9,7 @@ namespace POiG_Projekt.DAL.Repozytoria
     class RepoEfekty
     {
         private const string wszystkie_efekty = "SELECT * FROM efekt";
-        
+        private const string efekty_z_przedmiotu = "SELECT * FROM efekt where id_przedmiot = ";
 
         public static List<Efekt> PobierzWszystkieEfekty()
         {
@@ -28,11 +28,11 @@ namespace POiG_Projekt.DAL.Repozytoria
 
         public static List<Efekt> PobierzEfektyPrzedmiotu(sbyte ID)
         {
-            string efekty_z_przedmiotu = $"SELECT * FROM efekt where id_przedmiot={ID};";//nie wiem jak to wrzucić jako stałą
+
             List<Efekt> efekty = new List<Efekt>();
             using (var connection = DBConnection.Cnn)
             {
-                MySqlCommand command = new MySqlCommand(efekty_z_przedmiotu, connection);
+                MySqlCommand command = new MySqlCommand(efekty_z_przedmiotu + ID, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
