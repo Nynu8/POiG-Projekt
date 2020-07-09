@@ -9,11 +9,11 @@ namespace POiG_Projekt.ViewModel
 {
     class ProfessorsViewModel : ViewModelBase
     {
-        private ListaProwadzacy model = null;
+        private ListaProwadzacych model = null;
         private List<Prowadzacy> prowadzacy = null;
         public ProfessorsViewModel()
         {
-            this.model = new ListaProwadzacy();
+            this.model = new ListaProwadzacych();
             this.prowadzacy = this.model.Prowadzacy;
         }
 

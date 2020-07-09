@@ -1,4 +1,5 @@
 ﻿using POiG_Projekt.DAL;
+using POiG_Projekt.Model;
 using POiG_Projekt.ViewModel.Base;
 using POiG_Projekt.ViewModel.Navigator;
 using System;
@@ -11,11 +12,13 @@ namespace POiG_Projekt.ViewModel
     class MainWindowViewModel : ViewModelBase
     {
         public INavigator navigator { get; } = new Navigator.Navigator();
+        private ListaProwadzacych Prowadzacy = new ListaProwadzacych();
         public MainWindowViewModel()
         { 
             navigator.UpdateCurrentVMCommand.Execute(ViewType.Home);
             _ = DBConnection.Connection;
             date = DateTime.Now;
+            currentUser = Prowadzacy.PobierzBiezacegoUzytkownika(DBConnection.ID);
         }
 
         #region properties
@@ -30,6 +33,20 @@ namespace POiG_Projekt.ViewModel
             set
             {
                 date = value;
+                onPropertyChanged();
+            }
+        }
+
+        string currentUser;
+        public string CurrentUser
+        {
+            get
+            {
+                return currentUser;
+            }
+            set
+            {
+                currentUser = value;
                 onPropertyChanged();
             }
         }
