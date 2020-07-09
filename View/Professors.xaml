@@ -50,7 +50,7 @@
                     <GridViewColumn Width="300" Header="Przedmioty" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="Bindowane Przedmioty"/>
+                                <TextBlock Text="{Binding Przedmioty}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
