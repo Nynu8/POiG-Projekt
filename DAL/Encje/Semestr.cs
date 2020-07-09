@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,9 +7,17 @@ namespace POiG_Projekt.DAL.Encje
 {
     class Semestr
     {
+        public Semestr(MySqlDataReader reader)
+        {
+            Id_semestr = sbyte.Parse(reader["id_semestr"].ToString());
+            Rodzaj = reader["rodzaj"].ToString();
+            Rok = reader["rok"].ToString();
+            Aktywny = bool.Parse(reader["aktywny"].ToString());
+        }
+
         public sbyte Id_semestr { get; set; }
         public string Rodzaj { get; set; }
-        public sbyte Rok { get; set; }
+        public string Rok { get; set; }
         public bool Aktywny { get; set; }
         public override bool Equals(object obj)
         {
@@ -20,6 +29,10 @@ namespace POiG_Projekt.DAL.Encje
             return true;
         }
 
+        public override string ToString()
+        {
+            return $"{Rok}, {Rodzaj}";
+        }
         public override int GetHashCode()
         {
             return base.GetHashCode();
