@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,6 +10,12 @@ namespace POiG_Projekt.DAL.Encje
         public sbyte Id_efekt { get; set; }
         public sbyte Id_przedmiot { get; set; }
         public string Opis { get; set; }
+        public Efekt(MySqlDataReader reader)
+        {
+            Id_efekt = sbyte.Parse(reader["id_efekt"].ToString());
+            Id_przedmiot = sbyte.Parse(reader["id_przedmiot"].ToString());
+            Opis = reader["opis"].ToString();
+        }
         public override bool Equals(object obj)
         {
             var efekt = obj as Efekt;
