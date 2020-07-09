@@ -12,13 +12,13 @@ namespace POiG_Projekt.ViewModel
     class MainWindowViewModel : ViewModelBase
     {
         public INavigator navigator { get; } = new Navigator.Navigator();
-        private ListaProwadzacych Prowadzacy = new ListaProwadzacych();
+        //private ListaProwadzacych Prowadzacy = new ListaProwadzacych();
         public MainWindowViewModel()
         { 
             navigator.UpdateCurrentVMCommand.Execute(ViewType.Home);
             _ = DBConnection.Connection;
             date = DateTime.Now;
-            currentUser = Prowadzacy.PobierzBiezacegoUzytkownika(DBConnection.ID);
+            //currentUser = Prowadzacy.PobierzBiezacegoUzytkownika(DBConnection.ID);
         }
 
         #region properties

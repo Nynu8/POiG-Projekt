@@ -41,7 +41,7 @@
                     <Button x:Name="ButtonRanking" Content="Ranking" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Ranking}" Style="{StaticResource MenuButton}"/>
             </StackPanel>
             <Label x:Name="Zalogowanyjako" Content="Zalogowany jako" Grid.Row="2" Margin="0 0 0 60" Foreground="White" FontSize="14" Padding="40 0 0 0"/>
-            <TextBlock x:Name="Uzytkownik" Text="Binding CurrentUser" Grid.Row="2" Margin="0 20 0 60" Foreground="#409AEE" FontSize="14" Padding="40 0 0 0"/>
+            <TextBlock x:Name="Uzytkownik" Text="{Binding CurrentUser}" Grid.Row="2" Margin="0 20 0 60" Foreground="#409AEE" FontSize="14" Padding="40 0 0 0"/>
             <Button x:Name="ButtonWyloguj" Content="Wyloguj" Grid.Row="2" Margin="0 6 0 60" Style="{StaticResource MenuButtonWyloguj}" Command="{Binding SignOut, Mode=OneWay}" CommandParameter="{Binding Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MainWindow}}}"/>
 
             <TextBlock x:Name="Data" Text="{Binding Date, StringFormat='{}{0:MM/dd/yyyy}'}" Grid.Row="2" Margin="0 100 0 0" Foreground="White" FontSize="16" Padding="40 0 0 0"/>
