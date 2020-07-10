@@ -25,33 +25,60 @@
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Studenci" Style="{StaticResource Title}"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1">
-        <Label x:Name="LabelSemestr" Content="Semestr:"  Margin="20 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+        <Label x:Name="LabelSemestr" Content="Semestr:"  Margin="20 0 0 0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
             <ComboBox x:Name="ComboBoxSemestr" ItemsSource="{Binding Semestry}" Style="{StaticResource ComboBox}"/>
-            <Label x:Name="LabelGrupa" Content="Grupa:" Margin="60 0 0 0" FontSize="18" FontWeight="Bold" VerticalAlignment="Center"/>
+            <Label x:Name="LabelGrupa" Content="Grupa:" Margin="60 0 0 0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
         <ComboBox x:Name="ComboBoxGrupa" ItemsSource="{Binding Grupy}" SelectedItem="{Binding SelectedGrupa}" Style="{StaticResource ComboBox}"/>
         </StackPanel>
-        <ListBox x:Name="ListBoxStudenci" ItemsSource="{Binding Studenci}" Grid.Row="2">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Grid Margin="3">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="2*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="{Binding Imie}"/>
-                        <TextBlock Grid.Column="1" Text="{Binding Nazwisko}"/>
-                        <TextBlock Grid.Column="2" Text="{Binding Email}"/>
-                        <TextBlock Grid.Column="3" Text="{Binding NrAlbumu}"/>
-                        <TextBlock Grid.Column="4" Text="{Binding IdGrupy}"/>
-                        <Button Grid.Column="5" Content="Zobacz" Style="{StaticResource BlueDetailsButton}"/>
-                    </Grid>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ListView x:Name="ListBoxStudenci" ItemsSource="{Binding Studenci}" Grid.Row="2" Style="{StaticResource ListViewStyle}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Width="120" Header="Imię" HeaderContainerStyle="{StaticResource ColumnHeader}">
+
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Imie}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="120" Header="Nazwisko" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Nazwisko}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="220" Header="Adres e-mail" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Email}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="120" Header="Nr albumu" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding NrAlbumu}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="100" Header="Grupa" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding IdGrupy}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="140" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
     
 </Page>
