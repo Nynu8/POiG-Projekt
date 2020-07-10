@@ -22,7 +22,7 @@
                         
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Imie}" Margin="0 10 0 10"/>
+                                <TextBlock Text="{Binding Imie}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
