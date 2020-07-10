@@ -39,10 +39,10 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="180" Header="Semestr" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="180" Header="Rok" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Semestr}"/>
+                                <TextBlock Text="{Binding Rok}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
