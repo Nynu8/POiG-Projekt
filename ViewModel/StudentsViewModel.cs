@@ -37,7 +37,6 @@ namespace POiG_Projekt.ViewModel
             {
                 this.rok = value;
                 this.OnPropertyChanged();
-
             }
         }
         public List<Grupa> Grupy
@@ -72,7 +71,10 @@ namespace POiG_Projekt.ViewModel
                 selectedRok = value;
                 this.OnPropertyChanged();
                 if (value != null)
+                {
                     this.Grupy = model.PobierzWybraneGrupy((int)value);
+                    this.Studenci = model.PobierzWybranychStudentowRok((int)value);
+                }
                 else
                     this.Grupy = null;
             }

@@ -37,6 +37,16 @@ namespace POiG_Projekt.Model
         {
             return Studenci.Where(a => a.IdGrupy == idGrupy).ToList();
         }
+        public List<Student> PobierzWybranychStudentowRok(int rok)
+        {
+            var tmp = Grupy.Where(g => g.Rok == rok).ToList();
+            var studenci = new List<Student>();
+            foreach (var g in tmp)
+                foreach (var s in Studenci)
+                    if (s.IdGrupy == g.Id_grupa)
+                        studenci.Add(s);
+            return studenci;
+        }
         public List<Grupa> PobierzWybraneGrupy(int rok)
         {
             return Grupy.Where(g=>g.Rok==rok).ToList();
