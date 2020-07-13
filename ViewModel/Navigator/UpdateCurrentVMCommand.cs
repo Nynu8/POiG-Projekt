@@ -44,6 +44,9 @@ namespace POiG_Projekt.ViewModel.Navigator
                     case ViewType.Subjects:
                         _navigator.CurrentVM = new SubjectsViewModel();
                         break;
+                    case ViewType.SubjectsDetails:
+                        _navigator.CurrentVM = new Details.SubjectsDetailsViewModel();
+                        break;
                     default:
                         break;
                 }

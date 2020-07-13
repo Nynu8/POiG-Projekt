@@ -13,7 +13,8 @@ namespace POiG_Projekt.ViewModel.Navigator
         Students,
         Professors,
         Subjects,
-        Ranking
+        Ranking,
+        SubjectsDetails
     }
 
     internal interface INavigator

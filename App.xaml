@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:POiG_Projekt"
              xmlns:view="clr-namespace:POiG_Projekt.View"
+             xmlns:detailsView="clr-namespace:POiG_Projekt.ViewModel.Details"
              xmlns:viewModel="clr-namespace:POiG_Projekt.ViewModel"
+             xmlns:detailsViewModel="clr-namespace:POiG_Projekt.ViewModel.Details"
              StartupUri="View/SignInWindow.xaml">
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewModel:CoursesViewModel}">
@@ -23,6 +25,9 @@
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:SubjectsViewModel}">
             <view:Subjects/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type detailsViewModel:SubjectsDetailsViewModel}">
+            <detailsView:SubjectsDetails/>
         </DataTemplate>
 
         <Style TargetType="Button" x:Key="MenuButton">

@@ -4,10 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:POiG_Projekt.View"
+        xmlns:vm="clr-namespace:POiG_Projekt.ViewModel.Details"
+        xmlns:nav="clr-namespace:POiG_Projekt.ViewModel.Navigator"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="844"
       Title="Subjects"
       Background="White">
+    <Page.Resources>
+        <vm:SubjectsDetailsViewModel x:Key="ViewModel"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
