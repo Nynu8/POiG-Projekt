@@ -2,6 +2,7 @@
 using POiG_Projekt.DAL.Encje;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography.Xml;
 using System.Text;
 
 namespace POiG_Projekt.DAL.Repozytoria
@@ -9,6 +10,7 @@ namespace POiG_Projekt.DAL.Repozytoria
     class RepoPrzedmioty
     {
         private const string wszystkie_przedmioty = "SELECT * FROM przedmiot";
+        private const string okreslony_przedmiot = "SELECT * FROM przedmiot WHERE Id_przedmiot=";
         private const string przedmioty_prowadzacego = "SELECT * FROM przedmiot JOIN kurs ON przedmiot.Id_przedmiot=kurs.Id_przedmiot where kurs.Id_prowadzacy = ";
 
         public static List<Przedmiot> PobierzWszystkiePrzedmioty()
@@ -38,6 +40,20 @@ namespace POiG_Projekt.DAL.Repozytoria
                 connection.Close();
             }
             return przedmioty;
+        }
+        public static Przedmiot? PobierzPrzedmiot(sbyte ID)
+        {
+            using (var connection = DBConnection.Cnn)
+            {
+                MySqlCommand command = new MySqlCommand(okreslony_przedmiot + ID, connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    return new Przedmiot(reader);
+                connection.Close();
+            }
+
+            return null;
         }
     }
 }

@@ -1,17 +1,18 @@
-﻿<Page x:Class="POiG_Projekt.View.Subjects"
+﻿<Page
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:POiG_Projekt.View"
-        xmlns:vm="clr-namespace:POiG_Projekt.ViewModel.Details"
+        xmlns:vm="clr-namespace:POiG_Projekt.ViewModel"
         xmlns:nav="clr-namespace:POiG_Projekt.ViewModel.Navigator"
+      xmlns:POiG_Projekt="clr-namespace:POiG_Projekt" x:Class="POiG_Projekt.View.Subjects"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="844"
       Title="Subjects"
       Background="White">
     <Page.Resources>
-        <vm:SubjectsDetailsViewModel x:Key="ViewModel"/>
+        <vm:SubjectsViewModel x:Key="ViewModel"/>
     </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -60,7 +61,7 @@
                     <GridViewColumn Width="130" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}"/>
+                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}" Command="{Binding NavigateCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type POiG_Projekt:MainWindow}}}" CommandParameter="{x:Static nav:ViewType.SubjectsDetails}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

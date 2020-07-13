@@ -4,18 +4,22 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:POiG_Projekt.ViewModel.Details"
+        xmlns:vm="clr-namespace:POiG_Projekt.ViewModel.Details"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="844"
       Title="SubjectsDetails"
       Background="White">
 
+    <Page.Resources>
+        <vm:SubjectsDetailsViewModel x:Key="ViewModel"/>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="LabelTytul" Grid.Row="0" Content="Binding Name" Style="{StaticResource Title}"/>
+        <Label x:Name="LabelTytul" Grid.Row="0" Content="{Binding Name}" Style="{StaticResource Title}"/>
         <Grid Grid.Row="1" Background="#f5f5f5" Height="40">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -26,11 +30,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Skrót:" Style="{StaticResource DetailsNameLabel}"/>
-            <Label Grid.Column="1" Content="Binding Skrot" Style="{StaticResource DetailsBindingLabel}"/>
+            <Label Grid.Column="1" Content="{Binding Skrot}" Style="{StaticResource DetailsBindingLabel}"/>
             <Label Grid.Column="2" Content="Forma zaliczenia:" Style="{StaticResource DetailsNameLabel}"/>
-            <Label Grid.Column="3" Content="Binding FormaZaliczenia" Style="{StaticResource DetailsBindingLabel}"/>
+            <Label Grid.Column="3" Content="{Binding FormaZaliczenia}" Style="{StaticResource DetailsBindingLabel}"/>
             <Label Grid.Column="4" Content="Liczba ECTS:" Style="{StaticResource DetailsNameLabel}"/>
-            <Label Grid.Column="5" Content="Binding ECTS" Style="{StaticResource DetailsBindingLabel}"/>
+            <Label Grid.Column="5" Content="{Binding ECTS}" Style="{StaticResource DetailsBindingLabel}"/>
         </Grid>
         <ListView x:Name="ListViewEfekty" ItemsSource="{Binding Efekty}" Grid.Row="2" Style="{StaticResource ListViewStyle}">
             <ListView.View>

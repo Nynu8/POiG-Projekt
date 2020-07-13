@@ -13,7 +13,7 @@ namespace POiG_Projekt.Model.Forms
         public string FormaZaliczenia { get; set; }
         public sbyte ECTS { get; set; }
         public int LiczbaEfektow { get; set; }
-        public List<Efekt> Efekty;
+        public List<Efekt> Efekty { get; set; }
         public WidokPrzedmiotu(Przedmiot p)
         {
             this.Nazwa = p.Nazwa;
