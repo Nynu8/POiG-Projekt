@@ -1,4 +1,5 @@
 ﻿using POiG_Projekt.DAL;
+using POiG_Projekt.DAL.Repozytoria;
 using POiG_Projekt.Model;
 using POiG_Projekt.ViewModel.Base;
 using POiG_Projekt.ViewModel.Navigator;
@@ -12,14 +13,12 @@ namespace POiG_Projekt.ViewModel
     class MainWindowViewModel : ViewModelBase
     {
         public INavigator navigator { get; } = new Navigator.Navigator();
-        private ListaProwadzacych Prowadzacy = null;
         public MainWindowViewModel()
         { 
             navigator.UpdateCurrentVMCommand.Execute(ViewType.Home);
             _ = DBConnection.Connection;
             date = DateTime.Now;
-            Prowadzacy = new ListaProwadzacych();
-            currentUser = Prowadzacy.PobierzBiezacegoUzytkownika(DBConnection.ID);
+            currentUser = ListaProwadzacych.PobierzUzytkownika();
         }
 
         #region properties

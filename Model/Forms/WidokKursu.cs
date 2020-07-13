@@ -9,14 +9,14 @@ namespace POiG_Projekt.Model.Forms
     {
         public string Przedmiot { get; set; }
         public string Grupa { get; set; }
-        public string Semestr { get; set; }
+        public sbyte Rok { get; set; }
         public List<Student> Uczestnicy { get; set; }
 
-        public WidokKursu(string przedmiot, string grupa, string semestr, List<Student> uczestnicy)
+        public WidokKursu(string przedmiot, string grupa, sbyte rok, List<Student> uczestnicy)
         {
             Przedmiot = przedmiot;
             Grupa = grupa;
-            Semestr = semestr;
+            Rok = rok;
             Uczestnicy = uczestnicy;
         }
     }
