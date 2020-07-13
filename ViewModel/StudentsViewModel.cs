@@ -90,6 +90,8 @@ namespace POiG_Projekt.ViewModel
                     showAll = new RelayCommand(
                         arg =>
                         {
+                            this.SelectedGrupa = null;
+                            this.SelectedRok = null;
                             this.Studenci = this.model.Studenci;
                         },
                         arg =>
