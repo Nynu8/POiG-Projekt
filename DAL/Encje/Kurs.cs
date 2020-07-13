@@ -7,6 +7,8 @@ namespace POiG_Projekt.DAL.Encje
 {
     class Kurs
     {
+        private sbyte idSemestru;
+
         public sbyte Id_kurs { get; set; }
         public sbyte Id_przedmiot { get; set; }
         public sbyte Id_prowadzacy { get; set; }
@@ -26,6 +28,11 @@ namespace POiG_Projekt.DAL.Encje
             Id_przedmiot = sbyte.Parse(reader["Id_przedmiot"].ToString());
             Id_prowadzacy = sbyte.Parse(reader["Id_prowadzacy"].ToString());
             Id_semestr = sbyte.Parse(reader["Id_semestr"].ToString());
+        }
+
+        public Kurs(sbyte idSemestru)
+        {
+            this.idSemestru = idSemestru;
         }
 
         public override int GetHashCode()

@@ -4,6 +4,7 @@ using POiG_Projekt.ViewModel.Base;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows.Input;
 
 namespace POiG_Projekt.ViewModel
 {
@@ -11,14 +12,13 @@ namespace POiG_Projekt.ViewModel
     {
         private ListaStudentow model = null;
         private List<Student> studenci = null;
-        private List<Semestr> semestry = null;
+        private List<int> rok = null;
         private List<Grupa> grupy = null;
         public StudentsViewModel()
         {
             this.model = new ListaStudentow();
             this.studenci = this.model.Studenci;
-            this.semestry = this.model.Semestry;
-            this.grupy = this.model.Grupy;
+            this.rok = this.model.Rok;
         }
 
         public List<Student> Studenci
@@ -30,13 +30,14 @@ namespace POiG_Projekt.ViewModel
                 this.OnPropertyChanged();
             }
         }
-        public List<Semestr> Semestry
+        public List<int> Rok
         {
-            get => this.semestry;
+            get => this.rok;
             set
             {
-                this.semestry = value;
+                this.rok = value;
                 this.OnPropertyChanged();
+
             }
         }
         public List<Grupa> Grupy
@@ -56,7 +57,46 @@ namespace POiG_Projekt.ViewModel
             {
                 selectedGrupa = value;
                 this.OnPropertyChanged();
-                this.Studenci = model.PobierzWybranychStudentow(value.Id_grupa);
+                if (value != null)
+                    this.Studenci = model.PobierzWybranychStudentow(value.Id_grupa);
+                else
+                    this.Studenci = null;
+            }
+        }
+        private int? selectedRok;
+        public int? SelectedRok
+        {
+            get => selectedRok;
+            set
+            {
+                selectedRok = value;
+                this.OnPropertyChanged();
+                if (value != null)
+                    this.Grupy = model.PobierzWybraneGrupy((int)value);
+                else
+                    this.Grupy = null;
+            }
+        }
+
+        private ICommand showAll = null;
+        public ICommand ShowAll
+        {
+            get
+            {
+                if (showAll == null)
+                {
+                    showAll = new RelayCommand(
+                        arg =>
+                        {
+                            this.Studenci = this.model.Studenci;
+                        },
+                        arg =>
+                        {
+                            return true;
+                        }
+                        );
+                }
+                return showAll;
             }
         }
     }

@@ -25,10 +25,11 @@
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Studenci" Style="{StaticResource Title}"/>
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="1">
-        <Label x:Name="LabelSemestr" Content="Semestr:"  Margin="20 0 0 0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
-            <ComboBox x:Name="ComboBoxSemestr" ItemsSource="{Binding Semestry}" Style="{StaticResource ComboBox}"/>
+        <Label x:Name="LabelSemestr" Content="Rok akademicki:"  Margin="20 0 0 0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+            <ComboBox x:Name="ComboBoxSemestr" ItemsSource="{Binding Rok}"  SelectedItem="{Binding SelectedRok}" Style="{StaticResource ComboBox}"/>
             <Label x:Name="LabelGrupa" Content="Grupa:" Margin="60 0 0 0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
-        <ComboBox x:Name="ComboBoxGrupa" ItemsSource="{Binding Grupy}" SelectedItem="{Binding SelectedGrupa}" Style="{StaticResource ComboBox}"/>
+            <ComboBox x:Name="ComboBoxGrupa" ItemsSource="{Binding Grupy}" SelectedItem="{Binding SelectedGrupa}" Style="{StaticResource ComboBox}"/>
+            <Button Content="Zobacz wszystkich" Margin="60 0 0 0"  Style="{StaticResource SignInButton}" Command="{Binding ShowAll, Mode=OneWay}"/>
         </StackPanel>
         <ListView x:Name="ListBoxStudenci" ItemsSource="{Binding Studenci}" Grid.Row="2" Style="{StaticResource ListViewStyle}">
             <ListView.View>
