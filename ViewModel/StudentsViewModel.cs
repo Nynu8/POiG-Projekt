@@ -80,6 +80,17 @@ namespace POiG_Projekt.ViewModel
             }
         }
 
+        private Student selectedStudent;
+        public Student SelectedStudent
+        {
+            get => selectedStudent;
+            set
+            {
+                selectedStudent = value;
+                onPropertyChanged();
+            }
+        }
+
         private ICommand showAll = null;
         public ICommand ShowAll
         {
@@ -103,5 +114,33 @@ namespace POiG_Projekt.ViewModel
                 return showAll;
             }
         }
-    }
+
+        private ICommand showDetails = null;
+        public ICommand ShowDetails
+        {
+            get
+            {
+                if (showDetails == null)
+                {
+                    showDetails = new RelayCommand(
+                        arg =>
+                        {
+                            if (selectedStudent != null)
+                            {
+                                View.Details.StudentDetailsWindow subjectsDetails = new View.Details.StudentDetailsWindow();
+                                subjectsDetails.Show();
+                            }
+
+                        },
+                        arg =>
+                        {
+                            return true;
+                        }
+                        );
+                }
+                return showDetails;
+            }
+        }
+
+        }
 }

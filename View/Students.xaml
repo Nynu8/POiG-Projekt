@@ -73,7 +73,7 @@
                     <GridViewColumn Width="140" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}"/>
+                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}" Command="{Binding ShowDetails, Mode=OneWay}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
