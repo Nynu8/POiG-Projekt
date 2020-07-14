@@ -15,9 +15,7 @@ namespace POiG_Projekt.ViewModel.Details
         private Przedmiot przedmiot;
         public SubjectsDetailsViewModel()
         {
-            this.model = new ListaEfektow(1);
-            this.przedmiot = model.Przedmiot;
-            this.opisy = this.model.Efekty;
+
         }
         public string Name
         {

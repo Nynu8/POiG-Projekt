@@ -8,17 +8,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace POiG_Projekt.ViewModel.Details
+namespace POiG_Projekt.View.Details
 {
     /// <summary>
-    /// Logika interakcji dla klasy SubjectsDetails.xaml
+    /// Logika interakcji dla klasy SubjectsDetailsWindow.xaml
     /// </summary>
-    public partial class SubjectsDetails : Page
+    public partial class SubjectsDetailsWindow : Window
     {
-        public SubjectsDetails()
+        public SubjectsDetailsWindow()
         {
             InitializeComponent();
         }

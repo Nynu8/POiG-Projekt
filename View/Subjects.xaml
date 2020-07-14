@@ -14,13 +14,16 @@
     <Page.Resources>
         <vm:SubjectsViewModel x:Key="ViewModel"/>
     </Page.Resources>
+    <Page.DataContext>
+        <vm:SubjectsViewModel/>
+    </Page.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Przedmioty" Style="{StaticResource Title}"/>
-        <ListView x:Name="ListBoxPrzedmioty" ItemsSource="{Binding Przedmioty}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
+        <ListView x:Name="ListBoxPrzedmioty" ItemsSource="{Binding Przedmioty}"  SelectedItem="{Binding SelectedPrzedmiot}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Width="310" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
@@ -61,7 +64,7 @@
                     <GridViewColumn Width="130" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}" Command="{Binding NavigateCommand, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type POiG_Projekt:MainWindow}}}" CommandParameter="{x:Static nav:ViewType.SubjectsDetails}" />
+                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}" Command="{Binding ShowDetails, Mode=OneWay}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

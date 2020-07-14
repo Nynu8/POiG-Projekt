@@ -9,16 +9,13 @@ namespace POiG_Projekt.Model
 {
     class ListaEfektow
     {
-        public List<WidokEfekt> Efekty { get; set; } = new List<WidokEfekt>();
-        public Przedmiot Przedmiot { get; set; }
-        public ListaEfektow(sbyte id)
+        public static List<WidokEfekt> OpisyEfektow(sbyte id)
         {
+            List<WidokEfekt> Efekty = new List<WidokEfekt>();
             var tmpEfekty = RepoEfekty.PobierzWszystkieEfekty();
-            var tmp = RepoPrzedmioty.PobierzPrzedmiot(id);
-            if (tmp != null)
-                this.Przedmiot = tmp;
             foreach (var e in tmpEfekty)
                 Efekty.Add(new WidokEfekt(e.Opis));
+            return Efekty;
         }
     }
 }

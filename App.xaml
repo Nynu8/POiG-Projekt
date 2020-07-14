@@ -26,9 +26,6 @@
         <DataTemplate DataType="{x:Type viewModel:SubjectsViewModel}">
             <view:Subjects/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type detailsViewModel:SubjectsDetailsViewModel}">
-            <detailsView:SubjectsDetails/>
-        </DataTemplate>
 
         <Style TargetType="Button" x:Key="MenuButton">
             <Setter Property="Background" Value="#323942"/>
