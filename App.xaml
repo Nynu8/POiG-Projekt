@@ -6,8 +6,14 @@
              xmlns:detailsView="clr-namespace:POiG_Projekt.ViewModel.Details"
              xmlns:viewModel="clr-namespace:POiG_Projekt.ViewModel"
              xmlns:detailsViewModel="clr-namespace:POiG_Projekt.ViewModel.Details"
-             StartupUri="View/SignInWindow.xaml">
+             StartupUri="View/MainWindow.xaml">
     <Application.Resources>
+        <DataTemplate DataType="{x:Type viewModel:SignInViewModel}">
+            <view:SignIn/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:MainPageViewModel}">
+            <view:MainPage/>
+        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:CoursesViewModel}">
             <view:Courses/>
         </DataTemplate>

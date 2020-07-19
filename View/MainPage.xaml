@@ -1,0 +1,54 @@
+﻿<Page x:Class="POiG_Projekt.View.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:POiG_Projekt.View"
+      mc:Ignorable="d" 
+      xmlns:vm="clr-namespace:POiG_Projekt.ViewModel"
+       xmlns:nav="clr-namespace:POiG_Projekt.ViewModel.Navigator"
+        Title="Samaad">
+    <Page.Resources>
+        <vm:MainPageViewModel x:Key="viewModel"/>
+    </Page.Resources>
+    <Page.DataContext>
+        <vm:MainPageViewModel/>
+    </Page.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="180"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" Background="#323942">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Image Grid.Row="0" Height="80" Width="160" Source="../Resources/Logo.png" Stretch="Fill"/>
+
+
+
+            <StackPanel Grid.Row="1" Margin="0 30 0 20" DataContext="{StaticResource viewModel}">
+                <Button x:Name="ButtonHome" Content="Home" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Home}" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonMojeKursy" Content="Moje kursy" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Courses}" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonStudenci" Content="Studenci" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Students}" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonWykladowycy" Content="Wykładowcy" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Professors}" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonPrzedmioty" Content="Przedmioty" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Subjects}" Style="{StaticResource MenuButton}"/>
+                <Button x:Name="ButtonRanking" Content="Ranking" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Ranking}" Style="{StaticResource MenuButton}"/>
+            </StackPanel>
+            <Label x:Name="Zalogowanyjako" Content="Zalogowany jako" Grid.Row="2" Margin="0 0 0 60" Foreground="White" FontSize="14" Padding="40 0 0 0"/>
+            <TextBlock x:Name="Uzytkownik" Text="{Binding CurrentUser}" Grid.Row="2" Margin="0 20 0 60" Foreground="#409AEE" FontSize="14" Padding="40 0 0 0"/>
+            <Button x:Name="ButtonWyloguj" Content="Wyloguj" Grid.Row="2" Margin="0 6 0 60" Style="{StaticResource MenuButtonWyloguj}" Command="{Binding SignOut, Mode=OneWay}"/>
+
+            <TextBlock x:Name="Data" Text="{Binding Date, StringFormat='{}{0:dd.MM.yyyy}'}" Grid.Row="2" Margin="0 100 0 0" Foreground="White" FontSize="16" Padding="40 0 0 0"/>
+
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Content="{Binding navigator.CurrentVM, Source={StaticResource viewModel}}"/>
+        </Grid>
+    </Grid>
+</Page>

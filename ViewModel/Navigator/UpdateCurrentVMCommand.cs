@@ -47,6 +47,12 @@ namespace POiG_Projekt.ViewModel.Navigator
                     case ViewType.SubjectsDetails:
                         _navigator.CurrentVM = new Details.SubjectsDetailsViewModel();
                         break;
+                    case ViewType.MainPage:
+                        _navigator.CurrentVM = new MainPageViewModel();
+                        break;
+                    case ViewType.SignIn:
+                        _navigator.CurrentVM = new SignInViewModel();
+                        break;
                     default:
                         break;
                 }

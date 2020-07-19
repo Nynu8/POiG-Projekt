@@ -8,6 +8,8 @@ namespace POiG_Projekt.ViewModel.Navigator
 {
     internal enum ViewType
     {
+        SignIn,
+        MainPage,
         Home,
         Courses,
         Students,

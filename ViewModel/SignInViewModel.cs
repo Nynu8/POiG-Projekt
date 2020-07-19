@@ -57,12 +57,8 @@ namespace POiG_Projekt.ViewModel
                     showMenu = new RelayCommand(
                         arg =>
                         {
-
                             DBConnection.ID = 1;
-                            SignInWindow currentWindow = arg as SignInWindow;
-                            MainWindow mainWindow = new MainWindow();
-                            currentWindow.Close();
-                            mainWindow.Show();
+                            MainWindowViewModel.Navigator.UpdateCurrentVMCommand.Execute(ViewType.MainPage);
                         },
                         arg =>
                         {
@@ -89,10 +85,7 @@ namespace POiG_Projekt.ViewModel
                                 DBConnection.ID = Logowanie.GetID(nazwaUzytkownika, haslo);
                                 if (DBConnection.ID != 0)
                                 {
-                                    SignInWindow currentWindow = arg as SignInWindow;
-                                    MainWindow mainWindow = new MainWindow();
-                                    currentWindow.Close();
-                                    mainWindow.Show();
+                                    MainWindowViewModel.Navigator.UpdateCurrentVMCommand.Execute(ViewType.MainPage);
                                 }
                                 else
                                     Error = "Podano zły login lub hasło";
