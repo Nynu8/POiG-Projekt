@@ -30,10 +30,10 @@ namespace POiG_Projekt.ViewModel
             {
                 this.przedmioty = value;
                 onPropertyChanged();
-            }  
+            }
         }
-        private Przedmiot selectedPrzedmiot; 
-        public Przedmiot SelectedPrzedmiot
+        private WidokPrzedmiotu selectedPrzedmiot;
+        public WidokPrzedmiotu SelectedPrzedmiot
         {
             get => selectedPrzedmiot;
             set
@@ -53,21 +53,17 @@ namespace POiG_Projekt.ViewModel
                     showDetails = new RelayCommand(
                         arg =>
                         {
-                            if (selectedPrzedmiot != null)
-                            {
-                                View.Details.SubjectsDetailsWindow subjectsDetails = new View.Details.SubjectsDetailsWindow();
-                                subjectsDetails.LabelTytul.Content = selectedPrzedmiot.Nazwa;
-                                subjectsDetails.Skrot.Content = selectedPrzedmiot.Skrot;
-                                subjectsDetails.ects.Content = selectedPrzedmiot.ECTS;
-                                subjectsDetails.Rodzaj.Content = selectedPrzedmiot.Rodzaj;
-                                subjectsDetails.ListViewEfekty.ItemsSource = ListaEfektow.OpisyEfektow(SelectedPrzedmiot.Id_przedmiot);
-                                subjectsDetails.Show();
-                            }
-
+                            View.Details.SubjectsDetailsWindow subjectsDetails = new View.Details.SubjectsDetailsWindow();
+                            subjectsDetails.LabelTytul.Content = selectedPrzedmiot.Nazwa;
+                            subjectsDetails.Skrot.Content = selectedPrzedmiot.Skrot;
+                            subjectsDetails.ects.Content = selectedPrzedmiot.ECTS;
+                            subjectsDetails.Rodzaj.Content = selectedPrzedmiot.FormaZaliczenia;
+                            //subjectsDetails.ListViewEfekty.ItemsSource = ListaEfektow.OpisyEfektow(SelectedPrzedmiot.Id_przedmiot);
+                            subjectsDetails.Show();
                         },
                         arg =>
                         {
-                            return true;
+                            return (selectedPrzedmiot != null);
                         }
                         );
                 }

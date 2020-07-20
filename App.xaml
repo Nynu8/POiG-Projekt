@@ -146,11 +146,11 @@
             <Setter Property="Margin" Value="10 0 0 0"/>
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Background" Value="Aquamarine" />
                     <Setter Property="Margin" Value="10 0 0 0"/>
                 </Trigger>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Background" Value="LightBlue" />
                     <Setter Property="Margin" Value="10 0 0 0"/>
                 </Trigger>
             </Style.Triggers>

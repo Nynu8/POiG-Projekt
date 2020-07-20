@@ -22,10 +22,5 @@ namespace POiG_Projekt.View
         {
             InitializeComponent();
         }
-
-        private void ListBoxKursy_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

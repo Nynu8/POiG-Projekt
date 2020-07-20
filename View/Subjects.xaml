@@ -7,6 +7,7 @@
         xmlns:vm="clr-namespace:POiG_Projekt.ViewModel"
         xmlns:nav="clr-namespace:POiG_Projekt.ViewModel.Navigator"
       xmlns:POiG_Projekt="clr-namespace:POiG_Projekt" x:Class="POiG_Projekt.View.Subjects"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="844"
       Title="Subjects"
@@ -23,7 +24,14 @@
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Przedmioty" Style="{StaticResource Title}"/>
-        <ListView x:Name="ListBoxPrzedmioty" ItemsSource="{Binding Przedmioty}"  SelectedItem="{Binding SelectedPrzedmiot}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
+        <ListView x:Name="ListViewPrzedmioty" ItemsSource="{Binding Przedmioty}"
+        SelectedItem="{Binding SelectedPrzedmiot, Mode=Default, UpdateSourceTrigger=PropertyChanged}"
+        Grid.Row="1" Style="{StaticResource ListViewStyle}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding ShowDetails}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Width="310" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
@@ -58,13 +66,6 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding LiczbaEfektow}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="130" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}" Command="{Binding ShowDetails, Mode=OneWay}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
