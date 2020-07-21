@@ -6,39 +6,38 @@ using System.Text;
 
 namespace POiG_Projekt.DAL.Repozytoria
 {
-    class RepoGrupy
+    class RepoOsiagniecia
     {
-        private const string wszystkie = "SELECT * FROM grupa";
-        private const string grupa_studenta = "SELECT * FROM grupa WHERE id_grupa=";
+        private const string wszystkie = "SELECT * FROM osiagniecia";
+        private const string osiagniecia_studenta = "SELECT * FROM osiagniecia WHERE id_student = ";
 
-        public static List<Grupa> PobierzWszystkieGrupy()
+        public static List<Osiagniecia> PobierzWszystkieOsiagniecia()
         {
-            List<Grupa> grupy = new List<Grupa>();
+            List<Osiagniecia> osiagniecia = new List<Osiagniecia>();
             using (var connection = DBConnection.Cnn)
             {
                 MySqlCommand command = new MySqlCommand(wszystkie, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
-                    grupy.Add(new Grupa(reader));
+                    osiagniecia.Add(new Osiagniecia(reader));
                 connection.Close();
             }
-            return grupy;
+            return osiagniecia;
         }
-
-        public static Grupa PobierzGrupeOId(sbyte id)
+        public static List<Osiagniecia> PobierzOsiagnieciaStudenta(sbyte Id)
         {
-            List<Grupa> grupy = new List<Grupa>();
+            List<Osiagniecia> osiagniecia = new List<Osiagniecia>();
             using (var connection = DBConnection.Cnn)
             {
-                MySqlCommand command = new MySqlCommand(grupa_studenta+id, connection);
+                MySqlCommand command = new MySqlCommand(osiagniecia_studenta+Id, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
-                    grupy.Add(new Grupa(reader));
+                    osiagniecia.Add(new Osiagniecia(reader));
                 connection.Close();
             }
-            return grupy[0];
+            return osiagniecia;
         }
     }
 }

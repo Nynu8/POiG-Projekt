@@ -4,12 +4,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using POiG_Projekt.Model.Forms;
 
 namespace POiG_Projekt.Model
 {
     class ListaStudentow
     {
-        public List<Student> Studenci { get; set; } = new List<Student>();
+        public List<WidokStudenta> Studenci { get; set; } = new List<WidokStudenta>();
         public List<int> Rok { get; set; } = new List<int>();
         public List<Grupa> Grupy { get; set; } = new List<Grupa>();
         public ListaStudentow()
@@ -17,7 +18,7 @@ namespace POiG_Projekt.Model
             var studenci = RepoStudenci.PobierzWszyscyStudenci();
             foreach (var p in studenci)
             {
-                this.Studenci.Add(p);
+                this.Studenci.Add(new WidokStudenta(p));
             }
 
             var grupy = RepoGrupy.PobierzWszystkieGrupy();
@@ -33,19 +34,13 @@ namespace POiG_Projekt.Model
             }
         }
 
-        public List<Student> PobierzWybranychStudentow(sbyte idGrupy)
+        public List<WidokStudenta> PobierzWybranychStudentow(sbyte idGrupy)
         {
-            return Studenci.Where(a => a.IdGrupy == idGrupy).ToList();
+            return Studenci.Where(a => a.Grupa.Id_grupa == idGrupy).ToList();
         }
-        public List<Student> PobierzWybranychStudentowRok(int rok)
+        public List<WidokStudenta> PobierzWybranychStudentowRok(int rok)
         {
-            var tmp = Grupy.Where(g => g.Rok == rok).ToList();
-            var studenci = new List<Student>();
-            foreach (var g in tmp)
-                foreach (var s in Studenci)
-                    if (s.IdGrupy == g.Id_grupa)
-                        studenci.Add(s);
-            return studenci;
+            return Studenci.Where(a => a.Grupa.Rok == rok).ToList();
         }
         public List<Grupa> PobierzWybraneGrupy(int rok)
         {

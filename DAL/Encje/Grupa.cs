@@ -30,7 +30,7 @@ namespace POiG_Projekt.DAL.Encje
 
         public override string ToString()
         {
-            return $"{Nazwa}";
+            return $"{Rok} {Nazwa}";
         }
         public override int GetHashCode()
         {

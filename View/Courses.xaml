@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:POiG_Projekt.View"
       xmlns:vm="clr-namespace:POiG_Projekt.ViewModel"
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="844"
       Title="Courses"
@@ -22,7 +23,12 @@
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Moje kursy" Style="{StaticResource Title}"/>
 
-        <ListView x:Name="ListBoxKursy" ItemsSource="{Binding Kursy}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
+        <ListView x:Name="ListBoxKursy" ItemsSource="{Binding Kursy}" SelectedItem="{Binding SelectedKurs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding ShowDetails}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Width="360" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
@@ -43,13 +49,6 @@
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Rok}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="124" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

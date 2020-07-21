@@ -41,5 +41,19 @@ namespace POiG_Projekt.DAL.Repozytoria
             return prowadzacy[0];
         }
 
+        public static Prowadzacy PobierzProwadzacegoOId(sbyte Id)
+        {
+            List<Prowadzacy> prowadzacy = new List<Prowadzacy>();
+            using (var connection = DBConnection.Cnn)
+            {
+                MySqlCommand command = new MySqlCommand(wybrany_prowadzacy + Id, connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    prowadzacy.Add(new Prowadzacy(reader));
+                connection.Close();
+            }
+            return prowadzacy[0];
+        }
     }
 }

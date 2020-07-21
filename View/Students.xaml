@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
         xmlns:vm="clr-namespace:POiG_Projekt.ViewModel"
       xmlns:local="clr-namespace:POiG_Projekt.View"
+      xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
       mc:Ignorable="d" 
       d:DesignHeight="640" d:DesignWidth="844"
       Title="Students"
@@ -31,7 +32,12 @@
             <ComboBox x:Name="ComboBoxGrupa" ItemsSource="{Binding Grupy}" SelectedItem="{Binding SelectedGrupa}" Style="{StaticResource ComboBox}"/>
             <Button Content="Zobacz wszystkich" Margin="60 0 0 0"  Style="{StaticResource SignInButton}" Command="{Binding ShowAll, Mode=OneWay}"/>
         </StackPanel>
-        <ListView x:Name="ListBoxStudenci" ItemsSource="{Binding Studenci}" Grid.Row="2" Style="{StaticResource ListViewStyle}">
+        <ListView x:Name="ListViewStudenci" ItemsSource="{Binding Studenci}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Style="{StaticResource ListViewStyle}">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseDoubleClick">
+                    <i:InvokeCommandAction Command="{Binding ShowDetails}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Width="120" Header="Imię" HeaderContainerStyle="{StaticResource ColumnHeader}">
@@ -66,14 +72,7 @@
                     <GridViewColumn Width="100" Header="Grupa" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding IdGrupy}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="140" Header="Szczegóły" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Button Content="Zobacz" Style="{StaticResource BlueDetailsButton}" Command="{Binding ShowDetails, Mode=OneWay}"/>
+                                <TextBlock Text="{Binding Grupa}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

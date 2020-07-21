@@ -1,5 +1,6 @@
 ﻿using POiG_Projekt.DAL.Encje;
 using POiG_Projekt.Model;
+using POiG_Projekt.Model.Forms;
 using POiG_Projekt.ViewModel.Base;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ namespace POiG_Projekt.ViewModel
     class StudentsViewModel : ViewModelBase
     {
         private ListaStudentow model = null;
-        private List<Student> studenci = null;
+        private List<WidokStudenta> studenci = null;
         private List<int> rok = null;
         private List<Grupa> grupy = null;
         public StudentsViewModel()
@@ -21,7 +22,7 @@ namespace POiG_Projekt.ViewModel
             this.rok = this.model.Rok;
         }
 
-        public List<Student> Studenci
+        public List<WidokStudenta> Studenci
         {
             get => this.studenci;
             set
@@ -80,8 +81,8 @@ namespace POiG_Projekt.ViewModel
             }
         }
 
-        private Student selectedStudent;
-        public Student SelectedStudent
+        private WidokStudenta selectedStudent;
+        public WidokStudenta SelectedStudent
         {
             get => selectedStudent;
             set

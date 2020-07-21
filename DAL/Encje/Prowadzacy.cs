@@ -31,6 +31,11 @@ namespace POiG_Projekt.DAL.Encje
             return true;
         }
 
+        public override string ToString()
+        {
+            return $"{Tytul} {Imie} {Nazwisko}";
+        }
+
         public override int GetHashCode()
         {
             return base.GetHashCode();
