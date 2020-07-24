@@ -16,6 +16,28 @@
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Wykładowcy" Style="{StaticResource Title}"/>
         <ListView x:Name="ListBoxWykladowcy" ItemsSource="{Binding Prowadzacy}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="BorderBrush" Value="White" />
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="Height" Value="32"/>
+                    <Setter Property="Margin" Value="20 0 0 0"/>
+                    <Setter Property="FontSize" Value="16"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="Background" Value="White" />
+                            <Setter Property="BorderThickness" Value="0" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="White" />
+                            <Setter Property="BorderThickness" Value="0" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </ListView.ItemContainerStyle>
+
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Width="120" Header="Imię" HeaderContainerStyle="{StaticResource ColumnHeader}">
@@ -26,28 +48,28 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="120" Header="Nazwisko" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="140" Header="Nazwisko" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Nazwisko}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="60" Header="Tytuł" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="80" Header="Tytuł" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Tytul}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="220" Header="Adres e-mail" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="240" Header="Adres e-mail" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Email}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="300" Header="Przedmioty" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="220" Header="Przedmioty" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Przedmioty}"/>

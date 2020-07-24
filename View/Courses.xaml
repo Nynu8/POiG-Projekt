@@ -31,7 +31,7 @@
             </i:Interaction.Triggers>
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
-                    <GridViewColumn Width="360" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="440" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Przedmiot}"/>

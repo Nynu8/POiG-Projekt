@@ -30,7 +30,7 @@
             <ComboBox x:Name="ComboBoxSemestr" ItemsSource="{Binding Rok}"  SelectedItem="{Binding SelectedRok}" Style="{StaticResource ComboBox}"/>
             <Label x:Name="LabelGrupa" Content="Grupa:" Margin="60 0 0 0" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
             <ComboBox x:Name="ComboBoxGrupa" ItemsSource="{Binding Grupy}" SelectedItem="{Binding SelectedGrupa}" Style="{StaticResource ComboBox}"/>
-            <Button Content="Zobacz wszystkich" Margin="60 0 0 0"  Style="{StaticResource SignInButton}" Command="{Binding ShowAll, Mode=OneWay}"/>
+            <Button Content="Zobacz wszystkich" Margin="60 0 0 0"  Style="{StaticResource ViewAllButton}" Command="{Binding ShowAll, Mode=OneWay}"/>
         </StackPanel>
         <ListView x:Name="ListViewStudenci" ItemsSource="{Binding Studenci}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Style="{StaticResource ListViewStyle}">
             <i:Interaction.Triggers>
@@ -40,7 +40,7 @@
             </i:Interaction.Triggers>
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
-                    <GridViewColumn Width="120" Header="Imię" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="180" Header="Imię" HeaderContainerStyle="{StaticResource ColumnHeader}">
 
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
@@ -48,7 +48,7 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="120" Header="Nazwisko" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="180" Header="Nazwisko" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Nazwisko}" />

@@ -34,35 +34,35 @@
             </i:Interaction.Triggers>
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
-                    <GridViewColumn Width="310" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="360" Header="Przedmiot" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Nazwa}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="60" Header="Skrót" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="80" Header="Skrót" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Skrot}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="140" Header="Forma zaliczenia" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="160" Header="Forma zaliczenia" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding FormaZaliczenia}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="50" Header="ECTS" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="60" Header="ECTS" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding ECTS}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="130" Header="Liczba efektów" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="140" Header="Liczba efektów" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding LiczbaEfektow}"/>
