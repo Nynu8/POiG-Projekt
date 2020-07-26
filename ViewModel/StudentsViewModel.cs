@@ -4,6 +4,7 @@ using POiG_Projekt.Model.Forms;
 using POiG_Projekt.ViewModel.Base;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 
@@ -126,16 +127,21 @@ namespace POiG_Projekt.ViewModel
                     showDetails = new RelayCommand(
                         arg =>
                         {
-                            if (selectedStudent != null)
-                            {
-                                View.Details.StudentDetailsWindow subjectsDetails = new View.Details.StudentDetailsWindow();
-                                subjectsDetails.Show();
-                            }
+                           
+                            View.Details.StudentDetailsWindow studentsDetails = new View.Details.StudentDetailsWindow();
+                            studentsDetails.LabelTytul.Content = selectedStudent.Imie + " " + selectedStudent.Nazwisko;
+                            studentsDetails.LabelEmail.Content = selectedStudent.Email;
+                            studentsDetails.LabelAlbum.Content = selectedStudent.NrAlbumu;
+                            studentsDetails.LabelGrupa.Content = selectedStudent.Grupa;
+                            studentsDetails.LabelDataRozpoczecia.Content = selectedStudent.DataRozpoczecia;
+                            // do dokonczenia
+                            studentsDetails.Show();
+                         
 
                         },
                         arg =>
                         {
-                            return true;
+                            return (selectedStudent != null);
                         }
                         );
                 }
