@@ -17,22 +17,22 @@ namespace POiG_Projekt.ViewModel.Details
         {
 
         }
-        public string Name
-        {
-            get => this.przedmiot.Nazwa;
-        }
-        public string Skrot
-        {
-            get => this.przedmiot.Skrot;
-        }
-        public string FormaZaliczenia
-        {
-            get => this.przedmiot.Rodzaj;
-        }
-        public string ECTS
-        {
-            get => this.przedmiot.ECTS.ToString();
-        }
+        //public string Name
+        //{
+        //    get => this.przedmiot.Nazwa;
+        //}
+        //public string Skrot
+        //{
+        //    get => this.przedmiot.Skrot;
+        //}
+        //public string FormaZaliczenia
+        //{
+        //    get => this.przedmiot.Rodzaj;
+        //}
+        //public string ECTS
+        //{
+        //    get => this.przedmiot.ECTS.ToString();
+        //}
         public List<WidokEfekt> Efeky
         {
             get => this.opisy;
