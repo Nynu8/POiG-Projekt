@@ -52,7 +52,11 @@ namespace POiG_Projekt.ViewModel
                     showDetails = new RelayCommand(
                         arg =>
                         {
-                        //tu trzeba nawigatorem przełączyć stronę i przekazać jej parametry selectedKurs itd.
+                            View.Details.CourseDetailsWindow courseDetails = new View.Details.CourseDetailsWindow();
+                            courseDetails.LabelTytul.Content = selectedKurs.Przedmiot;
+                            courseDetails.Grupa.Content = selectedKurs.Grupa;
+                            courseDetails.iloscUczestnikow.Content = selectedKurs.Uczestnicy.Count.ToString();
+                            courseDetails.Show();
                         },
                         arg =>
                         {
