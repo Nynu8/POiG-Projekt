@@ -8,6 +8,7 @@ using POiG_Projekt.ViewModel.Details;
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
+using System.Linq;
 
 namespace POiG_Projekt.ViewModel
 {
@@ -58,7 +59,7 @@ namespace POiG_Projekt.ViewModel
                             subjectsDetails.Skrot.Content = selectedPrzedmiot.Skrot;
                             subjectsDetails.ects.Content = selectedPrzedmiot.ECTS;
                             subjectsDetails.Rodzaj.Content = selectedPrzedmiot.FormaZaliczenia;
-                            //subjectsDetails.ListViewEfekty.ItemsSource = ListaEfektow.OpisyEfektow(SelectedPrzedmiot.Id_przedmiot);
+                            subjectsDetails.ListViewEfekty.ItemsSource = selectedPrzedmiot.Efekty.Select(e=>e.Opis).ToArray();
                             subjectsDetails.Show();
                         },
                         arg =>

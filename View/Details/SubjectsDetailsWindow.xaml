@@ -13,6 +13,9 @@
     <Window.Resources>
         <vm:SubjectsDetailsViewModel x:Key="ViewModel"/>
     </Window.Resources>
+    <Window.DataContext>
+        <vm:SubjectsDetailsViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -36,18 +39,21 @@
             <Label Grid.Column="4" Content="Liczba ECTS:" Style="{StaticResource DetailsNameLabel}"/>
             <Label x:Name="ects" Grid.Column="5" Content="{Binding ECTS}" Style="{StaticResource DetailsBindingLabel}"/>
         </Grid>
-        <ListView x:Name="ListViewEfekty" ItemsSource="{Binding Efekty}" Grid.Row="2" Style="{StaticResource ListViewStyle}">
-            <ListView.View>
+        <ListView x:Name="ListViewEfekty" Grid.Row="2" Style="{StaticResource ListViewStyle}" ItemsSource="{Binding Efeky}">
+          <ListView.View>
                 <GridView>
                     <GridViewColumn Width="820" Header="Opis efektów:" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                        <GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+              </ListView.View>
+                <!--      <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding Opis}" Style="{StaticResource ListViewElement}"/>
+                                <TextBlock Style="{StaticResource ListViewElement}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
                 </GridView>
-            </ListView.View>
+            </ListView.View>-->
         </ListView>
     </Grid>
 </Window>

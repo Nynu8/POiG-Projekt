@@ -14,7 +14,8 @@ namespace POiG_Projekt.Model
             List<WidokEfekt> Efekty = new List<WidokEfekt>();
             var tmpEfekty = RepoEfekty.PobierzWszystkieEfekty();
             foreach (var e in tmpEfekty)
-                Efekty.Add(new WidokEfekt(e.Opis));
+                if(e.Id_przedmiot == id)
+                    Efekty.Add(new WidokEfekt(e.Opis));
             return Efekty;
         }
     }
