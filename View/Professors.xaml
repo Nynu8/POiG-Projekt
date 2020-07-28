@@ -15,28 +15,8 @@
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Wykładowcy" Style="{StaticResource Title}"/>
-        <ListView x:Name="ListBoxWykladowcy" ItemsSource="{Binding Prowadzacy}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
-            <ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-                    <Setter Property="Background" Value="White" />
-                    <Setter Property="BorderBrush" Value="White" />
-                    <Setter Property="BorderThickness" Value="0" />
-                    <Setter Property="Height" Value="32"/>
-                    <Setter Property="Margin" Value="20 0 0 0"/>
-                    <Setter Property="FontSize" Value="16"/>
-                    <Style.Triggers>
-                        <Trigger Property="IsSelected" Value="True">
-                            <Setter Property="Background" Value="White" />
-                            <Setter Property="BorderThickness" Value="0" />
-                        </Trigger>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" Value="White" />
-                            <Setter Property="BorderThickness" Value="0" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </ListView.ItemContainerStyle>
+        <ListView x:Name="ListBoxWykladowcy" ItemsSource="{Binding Prowadzacy}" Grid.Row="1" Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
+            
 
             <ListView.View>
                 <GridView AllowsColumnReorder="False">

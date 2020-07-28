@@ -39,8 +39,9 @@
             <Label Grid.Column="4" Content="Liczba ECTS:" Style="{StaticResource DetailsNameLabel}"/>
             <Label x:Name="ects" Grid.Column="5" Content="{Binding ECTS}" Style="{StaticResource DetailsBindingLabel}"/>
         </Grid>
-        <ListView x:Name="ListViewEfekty" Grid.Row="2" Style="{StaticResource ListViewStyle}" ItemsSource="{Binding Efeky}">
-          <ListView.View>
+        <ListView x:Name="ListViewEfekty" Grid.Row="2" Style="{StaticResource ListViewStyle}" ItemsSource="{Binding Efeky}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
+           
+            <ListView.View>
                 <GridView>
                     <GridViewColumn Width="820" Header="Opis efektów:" HeaderContainerStyle="{StaticResource ColumnHeader}">
                     </GridViewColumn>

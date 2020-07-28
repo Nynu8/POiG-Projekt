@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>POiG_Projekt</RootNamespace>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>ICON.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
