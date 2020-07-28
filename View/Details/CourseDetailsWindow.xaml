@@ -21,6 +21,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="8*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="{Binding Name}" Style="{StaticResource Title}"/>
         <Grid Grid.Row="1" Background="#f5f5f5" Height="40">
@@ -34,6 +35,39 @@
             <Label x:Name="Grupa" Grid.Column="1" Content="{Binding Grupa}" Style="{StaticResource DetailsBindingLabel}"/>
             <Label Grid.Column="2" Content="Ilość uczestników: " Style="{StaticResource DetailsNameLabel}"/>
             <Label x:Name="iloscUczestnikow" Grid.Column="3" Content="{Binding iloscUczestnikow}" Style="{StaticResource DetailsBindingLabel}"/>
+
         </Grid>
+        <ListView x:Name="ListViewUczestnicy" Grid.Row="2" Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
+           
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Width="140" Header="Imię" HeaderContainerStyle="{StaticResource ColumnHeader}">
+
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Imie}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="280" Header="Nazwisko" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Nazwisko}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="280" Header="Ocena końcowa" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <!-- do dokończenia -->
+                                <ComboBox x:Name="ComboBoxOcena" Style="{StaticResource ComboBox}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Content="Zatwierdź" Grid.Row="3" Margin="0 0 40 0" HorizontalAlignment="Right" Style="{StaticResource BlueButton}" />
+
     </Grid>
 </Window>

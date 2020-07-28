@@ -8,6 +8,7 @@ using POiG_Projekt.ViewModel.Details;
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
+using System.Linq;
 
 namespace POiG_Projekt.ViewModel
 {
@@ -56,6 +57,7 @@ namespace POiG_Projekt.ViewModel
                             courseDetails.LabelTytul.Content = selectedKurs.Przedmiot;
                             courseDetails.Grupa.Content = selectedKurs.Grupa;
                             courseDetails.iloscUczestnikow.Content = selectedKurs.Uczestnicy.Count.ToString();
+                            courseDetails.ListViewUczestnicy.ItemsSource = selectedKurs.Uczestnicy;
                             courseDetails.Show();
                         },
                         arg =>
