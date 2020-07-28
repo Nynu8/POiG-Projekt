@@ -16,7 +16,9 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="{Binding Name}" Style="{StaticResource Title}"/>
 
@@ -33,7 +35,6 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Label Grid.Column="0" Grid.Row="0" Content="Adres e-mail:" Style="{StaticResource DetailsNameLabelLeft}"/>
             <Label x:Name="LabelEmail" Grid.Column="1" Grid.Row="0" Content="{Binding Email}" Style="{StaticResource DetailsBindingLabel}"/>
@@ -49,9 +50,44 @@
             <Label x:Name="LabelPunkty" Grid.Column="1" Grid.Row="5" Style="{StaticResource DetailsBindingLabel}"/>
             <Label Grid.Column="0" Grid.Row="6" Content="Czy ma stypendium?" Style="{StaticResource DetailsNameLabelLeft}"/>
             <Label x:Name="LabelStypendium" Grid.Column="1" Grid.Row="6" Style="{StaticResource DetailsBindingLabel}"/>
-            <Label Grid.Column="0" Grid.Row="7" Content="Dodatkowe osiągnięcia: " Style="{StaticResource DetailsNameLabelLeft}"/>
-            <Label x:Name="LabelOsiagniecia" Grid.Column="1" Grid.Row="7" Style="{StaticResource DetailsBindingLabel}"/>
         </Grid>
+        <ListView x:Name="ListViewOsiagniecia" Grid.Row="3" Style="{StaticResource ListViewStyle}" ItemsSource="{Binding Osiagniecia}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
 
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Width="140" Header="Punkty" HeaderContainerStyle="{StaticResource ColumnHeader}">
+
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock x:Name="Rodzaj" Text="{Binding Rodzaj}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="440" Header="Opis" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock x:Name="Opis" Text="{Binding Opis}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="140" Header="Rodzaj" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock x:Name="Punkty" Text="{Binding Punkty}" />
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="200" Header="Data" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock x:Name="Data" Text="{Binding Data}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                   
+                </GridView>
+            </ListView.View>
+
+        </ListView>
     </Grid>
 </Window>

@@ -59,8 +59,15 @@
                     <GridViewColumn Width="280" Header="Ocena końcowa" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <!-- do dokończenia -->
-                                <ComboBox x:Name="ComboBoxOcena" Style="{StaticResource ComboBox}"/>
+                                <!-- do poprawy -->
+                                <ComboBox x:Name="ComboBoxOcena" Style="{StaticResource ComboBox}">
+                                    <ComboBoxItem>2</ComboBoxItem>
+                                    <ComboBoxItem>3</ComboBoxItem>
+                                    <ComboBoxItem>3.5</ComboBoxItem>
+                                    <ComboBoxItem>4</ComboBoxItem>
+                                    <ComboBoxItem>4.5</ComboBoxItem>
+                                    <ComboBoxItem>5</ComboBoxItem>
+                                </ComboBox>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>

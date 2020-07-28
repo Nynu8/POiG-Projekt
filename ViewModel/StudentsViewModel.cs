@@ -134,7 +134,9 @@ namespace POiG_Projekt.ViewModel
                             studentsDetails.LabelAlbum.Content = selectedStudent.NrAlbumu;
                             studentsDetails.LabelGrupa.Content = selectedStudent.Grupa;
                             studentsDetails.LabelDataRozpoczecia.Content = selectedStudent.DataRozpoczecia;
-                            // do dokonczenia
+                            studentsDetails.LabelStypendium.Content = selectedStudent.Stypendium;
+                            studentsDetails.ListViewOsiagniecia.ItemsSource = selectedStudent.Osiagniecia;
+                            // do poprawy
                             studentsDetails.Show();
                          
 

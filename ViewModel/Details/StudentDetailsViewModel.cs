@@ -1,4 +1,5 @@
 ﻿using POiG_Projekt.DAL.Encje;
+using POiG_Projekt.Model.Forms;
 using POiG_Projekt.ViewModel.Base;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,7 @@ namespace POiG_Projekt.ViewModel.Details
     class StudentDetailsViewModel:ViewModelBase
     {
         private Student student;
+        private List<WidokOsiagniecia> osiagniecia = null;
         public StudentDetailsViewModel()
         {
 
@@ -52,6 +54,16 @@ namespace POiG_Projekt.ViewModel.Details
         public string Email
         {
             get => this.student.Email;
+        }
+
+        public List<WidokOsiagniecia> Osiagniecia
+        {
+            get => this.osiagniecia;
+            set
+            {
+                this.osiagniecia = value;
+                this.OnPropertyChanged();
+            }
         }
 
     }
