@@ -17,77 +17,81 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="4*"/>
-            <RowDefinition Height="3*"/>
 
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="{Binding Name}" Style="{StaticResource Title}"/>
+        <StackPanel Grid.Row="1" Margin="80 0" >
+            <Grid Grid.Row="1" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Content="Adres e-mail:" Style="{StaticResource DetailsNameLabelLeft}"/>
+                <Label x:Name="LabelEmail" Grid.Column="1" Grid.Row="0" Content="{Binding Email}" Style="{StaticResource DetailsBindingLabel}"/>
+                <Label Grid.Column="0" Grid.Row="1" Content="Nr albumu:" Style="{StaticResource DetailsNameLabelLeft}"/>
+                <Label x:Name="LabelAlbum" Grid.Column="1" Grid.Row="1" Content="{Binding Number}" Style="{StaticResource DetailsBindingLabel}"/>
+                <Label Grid.Column="0" Grid.Row="2" Content="Grupa:" Style="{StaticResource DetailsNameLabelLeft}"/>
+                <Label x:Name="LabelGrupa" Grid.Column="1" Grid.Row="2" Style="{StaticResource DetailsBindingLabel}"/>
+                <Label Grid.Column="0" Grid.Row="3" Content="Data rozpoczęcia studiów:" Style="{StaticResource DetailsNameLabelLeft}"/>
+                <Label x:Name="LabelDataRozpoczecia" Grid.Column="1" Grid.Row="3" Content="{Binding StartDate}" Style="{StaticResource DetailsBindingLabel}"/>
+                <Label Grid.Column="0" Grid.Row="4" Content="Średnia:" Style="{StaticResource DetailsNameLabelLeft}"/>
+                <Label x:Name="LabelSrednia" Grid.Column="1" Grid.Row="4" Style="{StaticResource DetailsBindingLabel}"/>
+                <Label Grid.Column="0" Grid.Row="5" Content="Punkty do stypendium:" Style="{StaticResource DetailsNameLabelLeft}"/>
+                <Label x:Name="LabelPunkty" Grid.Column="1" Grid.Row="5" Style="{StaticResource DetailsBindingLabel}"/>
+                <Label Grid.Column="0" Grid.Row="6" Content="Czy ma stypendium?" Style="{StaticResource DetailsNameLabelLeft}"/>
+                <Label x:Name="LabelStypendium" Grid.Column="1" Grid.Row="6" Style="{StaticResource DetailsBindingLabel}"/>
+            </Grid>
+            <Label  Content="Osiągniecia:" Style="{StaticResource DetailsNameLabelLeft}"/>
+            <StackPanel Grid.Row="1" Width="844" Margin="10">
 
-        <Grid Grid.Row="1" Background="#f5f5f5" Margin="80 20">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.Row="0" Content="Adres e-mail:" Style="{StaticResource DetailsNameLabelLeft}"/>
-            <Label x:Name="LabelEmail" Grid.Column="1" Grid.Row="0" Content="{Binding Email}" Style="{StaticResource DetailsBindingLabel}"/>
-            <Label Grid.Column="0" Grid.Row="1" Content="Nr albumu:" Style="{StaticResource DetailsNameLabelLeft}"/>
-            <Label x:Name="LabelAlbum" Grid.Column="1" Grid.Row="1" Content="{Binding Number}" Style="{StaticResource DetailsBindingLabel}"/>
-            <Label Grid.Column="0" Grid.Row="2" Content="Grupa:" Style="{StaticResource DetailsNameLabelLeft}"/>
-            <Label x:Name="LabelGrupa" Grid.Column="1" Grid.Row="2" Style="{StaticResource DetailsBindingLabel}"/>
-            <Label Grid.Column="0" Grid.Row="3" Content="Data rozpoczęcia studiów:" Style="{StaticResource DetailsNameLabelLeft}"/>
-            <Label x:Name="LabelDataRozpoczecia" Grid.Column="1" Grid.Row="3" Content="{Binding StartDate}" Style="{StaticResource DetailsBindingLabel}"/>
-            <Label Grid.Column="0" Grid.Row="4" Content="Średnia:" Style="{StaticResource DetailsNameLabelLeft}"/>
-            <Label x:Name="LabelSrednia" Grid.Column="1" Grid.Row="4" Style="{StaticResource DetailsBindingLabel}"/>
-            <Label Grid.Column="0" Grid.Row="5" Content="Punkty do stypendium:" Style="{StaticResource DetailsNameLabelLeft}"/>
-            <Label x:Name="LabelPunkty" Grid.Column="1" Grid.Row="5" Style="{StaticResource DetailsBindingLabel}"/>
-            <Label Grid.Column="0" Grid.Row="6" Content="Czy ma stypendium?" Style="{StaticResource DetailsNameLabelLeft}"/>
-            <Label x:Name="LabelStypendium" Grid.Column="1" Grid.Row="6" Style="{StaticResource DetailsBindingLabel}"/>
-        </Grid>
-        <ListView x:Name="ListViewOsiagniecia" Grid.Row="3" Style="{StaticResource ListViewStyle}" ItemsSource="{Binding Osiagniecia}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
+                <ListView x:Name="ListViewOsiagniecia"  HorizontalAlignment="Center" Style="{StaticResource ListViewStyle}" ItemsSource="{Binding Osiagniecia}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
 
-            <ListView.View>
-                <GridView AllowsColumnReorder="False">
-                    <GridViewColumn Width="140" Header="Punkty" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="False">
+                            <GridViewColumn Width="140" Header="Rodzaj" HeaderContainerStyle="{StaticResource ColumnHeader}">
 
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock x:Name="Rodzaj" Text="{Binding Rodzaj}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="440" Header="Opis" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock x:Name="Opis" Text="{Binding Opis}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="140" Header="Rodzaj" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock x:Name="Punkty" Text="{Binding Punkty}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="200" Header="Data" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                            <GridViewColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock x:Name="Data" Text="{Binding Data}" />
-                                </DataTemplate>
-                            </GridViewColumn.CellTemplate>
-                        </GridViewColumn>
-                   
-                </GridView>
-            </ListView.View>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock x:Name="Rodzaj" Text="{Binding Rodzaj}"/>
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="480" Header="Opis" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock x:Name="Opis" Text="{Binding Opis}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="80" Header="Punkty" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock x:Name="Punkty" Text="{Binding Punkty}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn Width="200" Header="Data" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBlock x:Name="Data" Text="{Binding Data}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
 
-        </ListView>
+                        </GridView>
+                    </ListView.View>
+
+                </ListView>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
