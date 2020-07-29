@@ -9,6 +9,7 @@ namespace POiG_Projekt.Model.Forms
 {
     class WidokStudenta
     {
+        public sbyte ID { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
         public string Email { get; set; }
@@ -23,6 +24,7 @@ namespace POiG_Projekt.Model.Forms
 
         public WidokStudenta(Student s)
         {
+            this.ID = (sbyte)s.Id_student;
             this.Imie = s.Imie;
             this.Nazwisko = s.Nazwisko;
             this.Email = s.Email;

@@ -37,7 +37,7 @@
             <Label x:Name="iloscUczestnikow" Grid.Column="3" Content="{Binding iloscUczestnikow}" Style="{StaticResource DetailsBindingLabel}"/>
 
         </Grid>
-        <ListView x:Name="ListViewUczestnicy" Grid.Row="2" Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
+        <ListView x:Name="ListViewUczestnicy" Grid.Row="2" ItemsSource="{Binding }" Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
            
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
@@ -59,8 +59,7 @@
                     <GridViewColumn Width="280" Header="Ocena końcowa" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <!-- do poprawy -->
-                                <ComboBox x:Name="ComboBoxOcena" Style="{StaticResource ComboBox}">
+                                <ComboBox x:Name="ComboBoxOcena" Style="{StaticResource ComboBox}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding Ocena.Wartosc, Mode=OneTime}">
                                     <ComboBoxItem>2</ComboBoxItem>
                                     <ComboBoxItem>3</ComboBoxItem>
                                     <ComboBoxItem>3.5</ComboBoxItem>
@@ -74,7 +73,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Zatwierdź" Grid.Row="3" Margin="0 0 40 0" HorizontalAlignment="Right" Style="{StaticResource BlueButton}" />
+        <Button Content="Zatwierdź" Grid.Row="3" Margin="0 0 40 0" HorizontalAlignment="Right" Style="{StaticResource BlueButton}"/>
 
     </Grid>
 </Window>
