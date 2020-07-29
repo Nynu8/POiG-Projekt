@@ -28,17 +28,17 @@ namespace POiG_Projekt.DAL.Repozytoria
 
         public static Grupa PobierzGrupeOId(sbyte id)
         {
-            List<Grupa> grupy = new List<Grupa>();
             using (var connection = DBConnection.Cnn)
             {
                 MySqlCommand command = new MySqlCommand(grupa_studenta+id, connection);
                 connection.Open();
                 var reader = command.ExecuteReader();
                 while (reader.Read())
-                    grupy.Add(new Grupa(reader));
+                    return new Grupa(reader);
                 connection.Close();
             }
-            return grupy[0];
+
+            return null;
         }
     }
 }

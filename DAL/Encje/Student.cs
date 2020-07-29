@@ -41,8 +41,7 @@ namespace POiG_Projekt.DAL.Encje
             Stypendium = bool.Parse(reader["stypendium"].ToString());
             Punkty = sbyte.Parse(reader["punkty"].ToString());
             DataRozpoczecia = reader["dataRozpoczecia"].ToString();
-            double srednia;
-            double.TryParse(reader["srednia"].ToString(), out srednia);
+            double.TryParse(reader["srednia"].ToString(), out var srednia);
             Srednia = srednia;
             Email = reader["email"].ToString();
             IdGrupy = sbyte.Parse(reader["id_grupa"].ToString());

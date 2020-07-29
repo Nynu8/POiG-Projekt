@@ -45,7 +45,7 @@
             <Label Grid.Column="0" Grid.Row="3" Content="Data rozpoczęcia studiów:" Style="{StaticResource DetailsNameLabelLeft}"/>
             <Label x:Name="LabelDataRozpoczecia" Grid.Column="1" Grid.Row="3" Content="{Binding StartDate}" Style="{StaticResource DetailsBindingLabel}"/>
             <Label Grid.Column="0" Grid.Row="4" Content="Średnia:" Style="{StaticResource DetailsNameLabelLeft}"/>
-            <Label x:Name="LabelSrednia" Grid.Column="1" Grid.Row="4" Style="{StaticResource DetailsBindingLabel}"/>
+            <Label x:Name="LabelSrednia" Grid.Column="1" Grid.Row="4" Style="{StaticResource DetailsBindingLabel}" Content="{Binding Average}" />
             <Label Grid.Column="0" Grid.Row="5" Content="Punkty do stypendium:" Style="{StaticResource DetailsNameLabelLeft}"/>
             <Label x:Name="LabelPunkty" Grid.Column="1" Grid.Row="5" Style="{StaticResource DetailsBindingLabel}"/>
             <Label Grid.Column="0" Grid.Row="6" Content="Czy ma stypendium?" Style="{StaticResource DetailsNameLabelLeft}"/>
