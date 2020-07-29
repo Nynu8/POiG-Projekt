@@ -41,7 +41,7 @@ namespace POiG_Projekt.DAL.Repozytoria
             }
             return przedmioty;
         }
-        public static Przedmiot? PobierzPrzedmiot(sbyte ID)
+        public static Przedmiot PobierzPrzedmiot(sbyte ID)
         {
             using (var connection = DBConnection.Cnn)
             {
