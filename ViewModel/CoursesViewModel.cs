@@ -57,7 +57,10 @@ namespace POiG_Projekt.ViewModel
                             courseDetails.LabelTytul.Content = selectedKurs.Przedmiot;
                             courseDetails.Grupa.Content = selectedKurs.Grupa;
                             courseDetails.iloscUczestnikow.Content = selectedKurs.Uczestnicy.Count.ToString();
-                            courseDetails.ListViewUczestnicy.ItemsSource = selectedKurs.Uczestnicy;
+                            List<WidokOcenStudenta> uczestnicy = new List<WidokOcenStudenta>();
+                            foreach (Student uczestnik in selectedKurs.Uczestnicy)
+                                uczestnicy.Add(new WidokOcenStudenta(uczestnik, selectedKurs.ID));
+                            courseDetails.ListViewUczestnicy.ItemsSource = uczestnicy;
                             courseDetails.Show();
                         },
                         arg =>

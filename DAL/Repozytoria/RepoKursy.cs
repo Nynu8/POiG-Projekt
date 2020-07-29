@@ -42,5 +42,7 @@ namespace POiG_Projekt.DAL.Repozytoria
 
             return kursy;
         }
+
+
     }
 }

@@ -10,14 +10,14 @@ namespace POiG_Projekt.DAL.Encje
         public sbyte Id_ocena { get; set; }
         public sbyte Id_student { get; set; }
         public sbyte Id_kurs { get; set; }
-        public sbyte Wartosc { get; set; }
+        public string Wartosc { get; set; }
 
         public Ocena(MySqlDataReader reader)
         {
             Id_ocena = sbyte.Parse(reader["id_ocena"].ToString());
             Id_student = sbyte.Parse(reader["id_student"].ToString());
             Id_kurs = sbyte.Parse(reader["id_kurs"].ToString());
-            Wartosc = sbyte.Parse(reader["wartosc"].ToString());
+            Wartosc = reader["wartosc"].ToString();
         }
         public override bool Equals(object obj)
         {

@@ -7,7 +7,7 @@ namespace POiG_Projekt.DAL.Encje
 {
     class Student
     {
-        public sbyte? Id_student { get; set; }//czemu jest nullable?
+        public sbyte? Id_student { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
         public string NrAlbumu { get; set; }

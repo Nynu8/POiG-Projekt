@@ -22,7 +22,7 @@ namespace POiG_Projekt.Model
                 var przedmiot = przedmioty.Where(P => P.Id_przedmiot == p.Id_przedmiot).Last();
                 var grupay = grupy.Where(g => g.Id_kurs == p.Id_kurs).ToList();
                 foreach (var g in grupay)
-                    Kursy.Add(new WidokKursu(przedmiot.Nazwa, g.Nazwa, g.Rok, studenci.Where(s => s.IdGrupy == g.Id_grupa).ToList()));
+                    Kursy.Add(new WidokKursu(p.Id_kurs, przedmiot.Nazwa, g.Nazwa, g.Rok, studenci.Where(s => s.IdGrupy == g.Id_grupa).ToList()));
             }
 
         }
