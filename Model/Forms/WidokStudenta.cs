@@ -34,7 +34,7 @@ namespace POiG_Projekt.Model.Forms
             this.Oceny = RepoOceny.PobierzOcenyStudenta((sbyte)s.Id_student);
             var Kursy = this.Oceny.Select(ocena => RepoKursy.PobierzKursID(ocena.Id_ocena));
             var wagi = Kursy.Select(kurs => (double)(RepoPrzedmioty.PobierzPrzedmiot(kurs.Id_przedmiot).ECTS)).ToArray();
-            var oceny = Oceny.Select(ocena => (double)ocena.Wartosc).ToArray();
+            var oceny = Oceny.Select(ocena => double.Parse(ocena.Wartosc)).ToArray();
             this.Srednia = oceny.Sum() / wagi.Sum();
             if(this.Srednia > 4.5)
             {
