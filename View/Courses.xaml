@@ -22,7 +22,7 @@
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Moje kursy" Style="{StaticResource Title}"/>
-
+        <StackPanel Grid.Row="1" Width="844" Margin="10">
         <ListView x:Name="ListBoxKursy" ItemsSource="{Binding Kursy}" SelectedItem="{Binding SelectedKurs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
@@ -38,14 +38,14 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="180" Header="Grupa" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="190" Header="Grupa" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Grupa}"/>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Width="180" Header="Rok" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                    <GridViewColumn Width="190" Header="Rok" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
                                 <TextBlock Text="{Binding Rok}"/>
@@ -55,5 +55,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        </StackPanel>
     </Grid>
 </Page>

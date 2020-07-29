@@ -37,7 +37,7 @@
                 <Button x:Name="ButtonStudenci" Content="Studenci" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Students}" Style="{StaticResource MenuButton}"/>
                 <Button x:Name="ButtonWykladowycy" Content="Wykładowcy" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Professors}" Style="{StaticResource MenuButton}"/>
                 <Button x:Name="ButtonPrzedmioty" Content="Przedmioty" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Subjects}" Style="{StaticResource MenuButton}"/>
-                <Button x:Name="ButtonRanking" Content="Ranking" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Ranking}" Style="{StaticResource MenuButton}"/>
+                <!--<Button x:Name="ButtonRanking" Content="Ranking" Grid.Row="1" Command="{Binding NavigateCommand}" CommandParameter="{x:Static nav:ViewType.Ranking}" Style="{StaticResource MenuButton}"/>-->
             </StackPanel>
             <Label x:Name="Zalogowanyjako" Content="Zalogowany jako" Grid.Row="2" Margin="0 0 0 60" Foreground="White" FontSize="14" Padding="40 0 0 0"/>
             <TextBlock x:Name="Uzytkownik" Text="{Binding CurrentUser}" Grid.Row="2" Margin="0 20 0 60" Foreground="#409AEE" FontSize="14" Padding="40 0 0 0"/>

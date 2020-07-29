@@ -37,43 +37,46 @@
             <Label x:Name="iloscUczestnikow" Grid.Column="3" Content="{Binding iloscUczestnikow}" Style="{StaticResource DetailsBindingLabel}"/>
 
         </Grid>
-        <ListView x:Name="ListViewUczestnicy" Grid.Row="2" Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
-           
-            <ListView.View>
-                <GridView AllowsColumnReorder="False">
-                    <GridViewColumn Width="140" Header="Imię" HeaderContainerStyle="{StaticResource ColumnHeader}">
+        <StackPanel Grid.Row="2" Width="844" Margin="180 0">
 
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Imie}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="280" Header="Nazwisko" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding Nazwisko}" />
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                    <GridViewColumn Width="280" Header="Ocena końcowa" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <!-- do poprawy -->
-                                <ComboBox x:Name="ComboBoxOcena" Style="{StaticResource ComboBox}">
-                                    <ComboBoxItem>2</ComboBoxItem>
-                                    <ComboBoxItem>3</ComboBoxItem>
-                                    <ComboBoxItem>3.5</ComboBoxItem>
-                                    <ComboBoxItem>4</ComboBoxItem>
-                                    <ComboBoxItem>4.5</ComboBoxItem>
-                                    <ComboBoxItem>5</ComboBoxItem>
-                                </ComboBox>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+            <ListView x:Name="ListViewUczestnicy" Grid.Row="2"  Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
+
+                <ListView.View>
+                    <GridView AllowsColumnReorder="False">
+                        <GridViewColumn Width="220" Header="Imię" HeaderContainerStyle="{StaticResource ColumnHeader}">
+
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Imie}"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="280" Header="Nazwisko" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Nazwisko}" />
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        <GridViewColumn Width="300" Header="Ocena końcowa" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <!-- do poprawy -->
+                                    <ComboBox x:Name="ComboBoxOcena" Style="{StaticResource ComboBox}" HorizontalAlignment="Left">
+                                        <ComboBoxItem>2</ComboBoxItem>
+                                        <ComboBoxItem>3</ComboBoxItem>
+                                        <ComboBoxItem>3.5</ComboBoxItem>
+                                        <ComboBoxItem>4</ComboBoxItem>
+                                        <ComboBoxItem>4.5</ComboBoxItem>
+                                        <ComboBoxItem>5</ComboBoxItem>
+                                    </ComboBox>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
         <Button Content="Zatwierdź" Grid.Row="3" Margin="0 0 40 0" HorizontalAlignment="Right" Style="{StaticResource BlueButton}" />
 
     </Grid>
