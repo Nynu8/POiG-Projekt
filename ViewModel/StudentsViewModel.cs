@@ -133,10 +133,11 @@ namespace POiG_Projekt.ViewModel
                             studentsDetails.LabelEmail.Content = selectedStudent.Email;
                             studentsDetails.LabelAlbum.Content = selectedStudent.NrAlbumu;
                             studentsDetails.LabelGrupa.Content = selectedStudent.Grupa;
+                            studentsDetails.LabelSrednia.Content = selectedStudent.Srednia;
+                            studentsDetails.LabelPunkty.Content = selectedStudent.Punkty;
                             studentsDetails.LabelDataRozpoczecia.Content = selectedStudent.DataRozpoczecia;
                             studentsDetails.LabelStypendium.Content = selectedStudent.Stypendium;
                             studentsDetails.ListViewOsiagniecia.ItemsSource = selectedStudent.Osiagniecia;
-                            // do poprawy
                             studentsDetails.Show();
                          
 
