@@ -7,7 +7,7 @@ namespace POiG_Projekt.DAL.Encje
 {
     class Student
     {
-        public sbyte? Id_student { get; set; }//czemu jest nullable?
+        public sbyte? Id_student { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
         public string NrAlbumu { get; set; }
@@ -40,9 +40,8 @@ namespace POiG_Projekt.DAL.Encje
             NrAlbumu = reader["nrAlbumu"].ToString();
             Stypendium = bool.Parse(reader["stypendium"].ToString());
             Punkty = sbyte.Parse(reader["punkty"].ToString());
-            DataRozpoczecia = reader["dataRozpoczecia"].ToString().Substring(0,10);
-            double srednia;
-            double.TryParse(reader["srednia"].ToString(), out srednia);
+            DataRozpoczecia = reader["dataRozpoczecia"].ToString().Substring(0, 10);
+            double.TryParse(reader["srednia"].ToString(), out var srednia);
             Srednia = srednia;
             Email = reader["email"].ToString();
             IdGrupy = sbyte.Parse(reader["id_grupa"].ToString());

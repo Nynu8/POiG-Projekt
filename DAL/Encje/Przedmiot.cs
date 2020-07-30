@@ -22,8 +22,7 @@ namespace POiG_Projekt.DAL.Encje
         }
         public override bool Equals(object obj)
         {
-            var przedmiot = obj as Przedmiot;
-            if (przedmiot is null) return false;
+            if (!(obj is Przedmiot przedmiot)) return false;
             if (Nazwa.ToLower() != przedmiot.Nazwa.ToLower()) return false;
             if (Skrot.ToLower() != przedmiot.Skrot.ToLower()) return false;
             if (Rodzaj.ToLower() != przedmiot.Rodzaj.ToLower()) return false;

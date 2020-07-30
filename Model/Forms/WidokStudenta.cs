@@ -9,13 +9,14 @@ namespace POiG_Projekt.Model.Forms
 {
     class WidokStudenta
     {
+        public sbyte ID { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
         public string Email { get; set; }
         public string NrAlbumu { get; set; }
         public string DataRozpoczecia { get; set; }
         public string Stypendium { get; set; }
-        public string Srednia { get; set; }
+        public double Srednia { get; set; }
         public Grupa Grupa { get; set; }
         public List<Ocena> Oceny { get; set; }
         public List<WidokOsiagniecia> Osiagniecia { get; set; }
@@ -23,17 +24,27 @@ namespace POiG_Projekt.Model.Forms
 
         public WidokStudenta(Student s)
         {
+            this.ID = (sbyte)s.Id_student;
             this.Imie = s.Imie;
             this.Nazwisko = s.Nazwisko;
             this.Email = s.Email;
             this.NrAlbumu = s.NrAlbumu;
             this.DataRozpoczecia = s.DataRozpoczecia;
-            if (s.Stypendium)
-                this.Stypendium = "Tak";
-            else
-                this.Stypendium = "Nie";
             this.Grupa = RepoGrupy.PobierzGrupeOId(s.IdGrupy);
             this.Oceny = RepoOceny.PobierzOcenyStudenta((sbyte)s.Id_student);
+            var Kursy = this.Oceny.Select(ocena => RepoKursy.PobierzKursID(ocena.Id_ocena));
+            var wagi = Kursy.Select(kurs => (double)(RepoPrzedmioty.PobierzPrzedmiot(kurs.Id_przedmiot).ECTS)).ToArray();
+            var oceny = Oceny.Select(ocena => double.Parse(ocena.Wartosc)).ToArray();
+            this.Srednia = oceny.Sum() / wagi.Sum();
+            if(this.Srednia > 4.5)
+            {
+                this.Stypendium = "Tak";
+            } 
+            else
+            {
+                this.Stypendium = "Nie";
+            }
+
             this.Osiagniecia = new List<WidokOsiagniecia>();
             List<Osiagniecia> osiagniecia = RepoOsiagniecia.PobierzOsiagnieciaStudenta((sbyte)s.Id_student);
             foreach (Osiagniecia o in osiagniecia)

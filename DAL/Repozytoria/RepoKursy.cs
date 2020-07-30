@@ -10,6 +10,7 @@ namespace POiG_Projekt.DAL.Repozytoria
     {
         private const string wszystkie_kursy = "SELECT * FROM kurs";
         private const string moje_kursy = "SELECT * FROM kurs WHERE id_prowadzacy = ";
+        private const string kurs_o_id = "SELECT * FROM kurs WHERE id_kurs = ";
 
         public static List<Kurs> PobierzWszystkieKursy()
         {
@@ -41,6 +42,21 @@ namespace POiG_Projekt.DAL.Repozytoria
             }
 
             return kursy;
+        }
+
+        public static Kurs PobierzKursID(sbyte id)
+        {
+            var kursy = new List<Kurs>();
+            using (var connection = DBConnection.Cnn)
+            {
+                MySqlCommand command = new MySqlCommand(kurs_o_id + id, connection);
+                connection.Open();
+                var reader = command.ExecuteReader();
+                while (reader.Read())
+                    kursy.Add(new Kurs(reader));
+                connection.Close();
+            }
+            return kursy[0];
         }
     }
 }
