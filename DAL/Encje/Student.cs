@@ -40,7 +40,7 @@ namespace POiG_Projekt.DAL.Encje
             NrAlbumu = reader["nrAlbumu"].ToString();
             Stypendium = bool.Parse(reader["stypendium"].ToString());
             Punkty = sbyte.Parse(reader["punkty"].ToString());
-            DataRozpoczecia = reader["dataRozpoczecia"].ToString();
+            DataRozpoczecia = reader["dataRozpoczecia"].ToString().Substring(0, 10);
             double.TryParse(reader["srednia"].ToString(), out var srednia);
             Srednia = srednia;
             Email = reader["email"].ToString();

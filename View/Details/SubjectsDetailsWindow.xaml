@@ -39,22 +39,15 @@
             <Label Grid.Column="4" Content="Liczba ECTS:" Style="{StaticResource DetailsNameLabel}"/>
             <Label x:Name="ects" Grid.Column="5" Content="{Binding ECTS}" Style="{StaticResource DetailsBindingLabel}"/>
         </Grid>
-        <ListView x:Name="ListViewEfekty" Grid.Row="2" Style="{StaticResource ListViewStyle}" ItemsSource="{Binding Efeky}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
-           
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Width="820" Header="Opis efektów:" HeaderContainerStyle="{StaticResource ColumnHeader}">
-                    </GridViewColumn>
-                </GridView>
-              </ListView.View>
-                <!--      <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock Style="{StaticResource ListViewElement}"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
-                </GridView>
-            </ListView.View>-->
-        </ListView>
+        <StackPanel Grid.Row="2" Width="990" Margin="120 0">
+            <ListView x:Name="ListViewEfekty" Grid.Row="2" Style="{StaticResource ListViewStyle}" ItemsSource="{Binding Efeky}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Width="940" Header="Opis efektów:" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
     </Grid>
 </Window>

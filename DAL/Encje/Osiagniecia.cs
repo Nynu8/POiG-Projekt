@@ -20,8 +20,8 @@ namespace POiG_Projekt.DAL.Encje
             Id_student = sbyte.Parse(reader["id_student"].ToString());
             Id_prowadzacy = sbyte.Parse(reader["id_prowadzacy"].ToString());
             Opis = reader["opis"].ToString();
-            Data = reader["data"].ToString();
-            Rodzaj = reader["punkty"].ToString();
+            Data = reader["data"].ToString().Substring(0,10);
+            Rodzaj = reader["rodzaj"].ToString();
             Punkty = sbyte.Parse(reader["punkty"].ToString());
         }
         public override bool Equals(object obj)
