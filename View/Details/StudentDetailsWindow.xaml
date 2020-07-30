@@ -16,7 +16,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="4*"/>
+            <RowDefinition Height="7*"/>
 
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="{Binding Name}" Style="{StaticResource Title}"/>
@@ -57,7 +57,7 @@
 
                     <ListView.View>
                         <GridView AllowsColumnReorder="False">
-                            <GridViewColumn Width="140" Header="Rodzaj" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                            <GridViewColumn Width="100" Header="Rodzaj" HeaderContainerStyle="{StaticResource ColumnHeader}">
 
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
@@ -65,7 +65,7 @@
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Width="480" Header="Opis" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                            <GridViewColumn Width="500" Header="Opis" HeaderContainerStyle="{StaticResource ColumnHeader}">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock x:Name="Opis" Text="{Binding Opis}" />
@@ -79,7 +79,7 @@
                                     </DataTemplate>
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
-                            <GridViewColumn Width="200" Header="Data" HeaderContainerStyle="{StaticResource ColumnHeader}">
+                            <GridViewColumn Width="140" Header="Data" HeaderContainerStyle="{StaticResource ColumnHeader}">
                                 <GridViewColumn.CellTemplate>
                                     <DataTemplate>
                                         <TextBlock x:Name="Data" Text="{Binding Data}" />
