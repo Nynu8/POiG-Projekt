@@ -38,7 +38,7 @@
 
         </Grid>
           <StackPanel Grid.Row="2" Width="844" Margin="180 0">
-        <ListView x:Name="ListViewUczestnicy" Grid.Row="2" ItemsSource="{Binding Uczestnicy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
+        <ListView x:Name="ListViewUczestnicy" Grid.Row="2" ItemsSource="{Binding Uczestnicy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}" ToolTip="Zobacz Więcej">
 
             <ListView.View>
                 <GridView AllowsColumnReorder="False">

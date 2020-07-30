@@ -23,9 +23,6 @@
         <DataTemplate DataType="{x:Type viewModel:ProfessorsViewModel}">
             <view:Professors/>
         </DataTemplate>
-        <DataTemplate DataType="{x:Type viewModel:RankingViewModel}">
-            <view:Ranking/>
-        </DataTemplate>
         <DataTemplate DataType="{x:Type viewModel:StudentsViewModel}">
             <view:Students/>
         </DataTemplate>
