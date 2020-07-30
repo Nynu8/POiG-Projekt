@@ -27,7 +27,7 @@
         <StackPanel Grid.Row="1" Width="844" Margin="10">
             <ListView x:Name="ListViewPrzedmioty" ItemsSource="{Binding Przedmioty}"
         SelectedItem="{Binding SelectedPrzedmiot, Mode=Default, UpdateSourceTrigger=PropertyChanged}"
-        Grid.Row="1" Style="{StaticResource ListViewStyle}">
+        Grid.Row="1" Style="{StaticResource ListViewStyle}" ToolTip="Zobacz więcej">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="MouseDoubleClick">
                         <i:InvokeCommandAction Command="{Binding ShowDetails}"/>

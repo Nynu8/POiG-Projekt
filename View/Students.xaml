@@ -33,7 +33,7 @@
             <Button Content="Zobacz wszystkich" Margin="60 0 0 0"  Style="{StaticResource BlueButton}" Command="{Binding ShowAll, Mode=OneWay}"/>
         </StackPanel>
         <StackPanel Grid.Row="2" Width="844" Margin="10">
-            <ListView x:Name="ListViewStudenci" ItemsSource="{Binding Studenci}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Style="{StaticResource ListViewStyle}">
+            <ListView x:Name="ListViewStudenci" ItemsSource="{Binding Studenci}" SelectedItem="{Binding SelectedStudent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Style="{StaticResource ListViewStyle}" ToolTip="Zobacz więcej">
                 <i:Interaction.Triggers>
                     <i:EventTrigger EventName="MouseDoubleClick">
                         <i:InvokeCommandAction Command="{Binding ShowDetails}"/>

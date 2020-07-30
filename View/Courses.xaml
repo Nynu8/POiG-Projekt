@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
         <Label x:Name="LabelTytul" Grid.Row="0" Content="Moje kursy" Style="{StaticResource Title}"/>
         <StackPanel Grid.Row="1" Width="844" Margin="10">
-        <ListView x:Name="ListBoxKursy" ItemsSource="{Binding Kursy}" SelectedItem="{Binding SelectedKurs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Style="{StaticResource ListViewStyle}">
+            <ListView x:Name="ListBoxKursy" ItemsSource="{Binding Kursy}" SelectedItem="{Binding SelectedKurs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Style="{StaticResource ListViewStyle}" ToolTip="Zobacz więcej">
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="MouseDoubleClick">
                     <i:InvokeCommandAction Command="{Binding ShowDetails}"/>

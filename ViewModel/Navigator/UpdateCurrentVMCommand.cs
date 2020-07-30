@@ -35,9 +35,6 @@ namespace POiG_Projekt.ViewModel.Navigator
                     case ViewType.Professors:
                         _navigator.CurrentVM = new ProfessorsViewModel();
                         break;
-                    case ViewType.Ranking:
-                        _navigator.CurrentVM = new RankingViewModel();
-                        break;
                     case ViewType.Students:
                         _navigator.CurrentVM = new StudentsViewModel();
                         break;
