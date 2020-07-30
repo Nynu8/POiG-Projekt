@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using POiG_Projekt.DAL.Repozytoria;
 using System.Linq;
+using System.Globalization;
 
 namespace POiG_Projekt.Model.Forms
 {
@@ -35,7 +36,7 @@ namespace POiG_Projekt.Model.Forms
             this.Oceny = RepoOceny.PobierzOcenyStudenta((sbyte)s.Id_student);
             var Kursy = this.Oceny.Select(ocena => RepoKursy.PobierzKursID(ocena.Id_kurs)).ToArray();
             var wagi = Kursy.Select(kurs => (double)(RepoPrzedmioty.PobierzPrzedmiot(kurs.Id_przedmiot).ECTS)).ToArray();
-            var oceny = Oceny.Select(ocena => double.Parse(ocena.Wartosc)).ToArray();
+            var oceny = Oceny.Select(ocena => double.Parse(ocena.Wartosc, CultureInfo.InvariantCulture)).ToArray();
 
             this.Osiagniecia = new List<WidokOsiagniecia>();
             List<Osiagniecia> osiagniecia = RepoOsiagniecia.PobierzOsiagnieciaStudenta((sbyte)s.Id_student);
