@@ -8,7 +8,7 @@ namespace POiG_Projekt.Model.Forms
 {
     class WidokOcenStudenta
     {
-        static string brakOceny = "Brak";
+        public static string brakOceny = "Brak";
         public sbyte ID { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }

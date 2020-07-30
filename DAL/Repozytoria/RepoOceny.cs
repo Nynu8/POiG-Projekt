@@ -45,7 +45,7 @@ namespace POiG_Projekt.DAL.Repozytoria
         public static void WprowadzOcene(sbyte id_kurs, sbyte id_studenta, string wartosc)
         {
             string del = $"DELETE FROM ocena WHERE id_kurs={id_kurs} AND id_student={id_studenta};";
-            string ins = $"INSERT INTO ocena(id_student, id_kurs, wartosc) VALUES ({id_studenta}, {id_kurs}, {wartosc});";
+            string ins = $"INSERT INTO ocena(id_student, id_kurs, wartosc) VALUES ({id_studenta}, {id_kurs}, \"{wartosc}\");";
             var connection = DBConnection.Cnn;
             connection.Open();
             MySqlCommand command1 = new MySqlCommand(del, connection);

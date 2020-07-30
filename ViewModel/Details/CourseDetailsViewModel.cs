@@ -47,24 +47,25 @@ namespace POiG_Projekt.ViewModel.Details
                         {
                             foreach (WidokOcenStudenta uczestnik in Uczestnicy)
                             {
-                                RepoOceny.WprowadzOcene(uczestnik.IdKursuOceny, uczestnik.ID, uczestnik.NowaOcena);
+                                if(!uczestnik.NowaOcena.Equals(WidokOcenStudenta.brakOceny))
+                                {
+                                    if(uczestnik.NowaOcena.StartsWith("System.Windows.Controls.ComboBoxItem: "))
+                                        uczestnik.NowaOcena = uczestnik.NowaOcena.Split("System.Windows.Controls.ComboBoxItem: ")[1];
+                                    RepoOceny.WprowadzOcene(uczestnik.IdKursuOceny, uczestnik.ID, uczestnik.NowaOcena);
+                                    uczestnik.ObecnaOcena = uczestnik.NowaOcena;
+                                }
                             }
-                            OnPropertyChanged(nameof(Uczestnicy));
                         },
                         arg =>
                         {
-                            foreach(WidokOcenStudenta uczestnik in Uczestnicy)
-                            {
-
-                                if (!uczestnik.ObecnaOcena.Equals(uczestnik.NowaOcena))
-                                    return true;
-                            }
-                            return false;
+                            return true;
                         }
                         );
                 }
                 return updateGrades;
             }
         }
+
+
     }
 }

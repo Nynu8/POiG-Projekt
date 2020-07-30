@@ -37,7 +37,7 @@
             <Label x:Name="iloscUczestnikow" Grid.Column="3" Style="{StaticResource DetailsBindingLabel}"/>
 
         </Grid>
-        <ListView x:Name="ListViewUczestnicy" Grid.Row="2" ItemsSource="{Binding Uczestnicy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, BindsDirectlyToSource=True}" Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
+        <ListView x:Name="ListViewUczestnicy" Grid.Row="2" ItemsSource="{Binding Uczestnicy, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ListViewStyle}" ItemContainerStyle="{StaticResource ListViewItemNotSelected}">
 
             <ListView.View>
                 <GridView AllowsColumnReorder="False">
@@ -59,8 +59,7 @@
                     <GridViewColumn Width="280" Header="Ocena końcowa" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <ComboBox x:Name="ComboBoxOcena" Style="{StaticResource ComboBox}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding Path=NowaOcena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, BindsDirectlyToSource=True}">
-                                    <ComboBoxItem>Brak</ComboBoxItem>
+                                <ComboBox x:Name="ComboBoxOcena" Style="{StaticResource ComboBox}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding NowaOcena}">
                                     <ComboBoxItem>2</ComboBoxItem>
                                     <ComboBoxItem>3</ComboBoxItem>
                                     <ComboBoxItem>3.5</ComboBoxItem>
@@ -74,7 +73,7 @@
                     <GridViewColumn Width="280" Header="Obecna Ocena" HeaderContainerStyle="{StaticResource ColumnHeader}">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock Text="{Binding ObecnaOcena, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                <TextBlock Text="{Binding ObecnaOcena, UpdateSourceTrigger=PropertyChanged}" />
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
