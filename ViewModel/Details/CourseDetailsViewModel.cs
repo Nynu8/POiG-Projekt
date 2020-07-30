@@ -55,7 +55,8 @@ namespace POiG_Projekt.ViewModel.Details
                                     uczestnik.ObecnaOcena = uczestnik.NowaOcena;
                                 }
                             }
-                        },
+                            
+                            },
                         arg =>
                         {
                             return true;

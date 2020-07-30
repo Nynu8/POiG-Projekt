@@ -4,11 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:POiG_Projekt.View.Details"
-       xmlns:vm="clr-namespace:POiG_Projekt.ViewModel.Details"
-      mc:Ignorable="d" 
-      d:DesignHeight="640" d:DesignWidth="844"
-      Title="SubjectsDetails"
-      Background="White">
+        xmlns:vm="clr-namespace:POiG_Projekt.ViewModel.Details"
+        mc:Ignorable="d" 
+        d:DesignHeight="640" d:DesignWidth="844"
+        Title="SubjectsDetails"
+        Background="White">
 
     <Window.Resources>
         <vm:CourseDetailsViewModel x:Key="ViewModel"/>
@@ -82,7 +82,7 @@
             </ListView.View>
         </ListView>
               </StackPanel>
-        <Button Content="Zatwierdź" Grid.Row="3" Margin="0 0 40 0" HorizontalAlignment="Right" Style="{StaticResource BlueButton}" Command="{Binding UpdateGrades}" />
+        <Button Content="Zatwierdź" Grid.Row="3" Margin="0 0 40 0" HorizontalAlignment="Right" Style="{StaticResource BlueButton}" Command="{Binding UpdateGrades}" Click="Close_Click" />
 
     </Grid>
 </Window>
